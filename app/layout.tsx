@@ -36,9 +36,6 @@ export default function RootLayout({
 
           <Link href="/">Home</Link>
           </div>
-          <div>
-          <Link href="/task/some">Some</Link>
-          </div>
         </header>
         {children}
         <footer>footer</footer>
