@@ -4,6 +4,7 @@ import "./globals.css";
 import Container from '@mui/material/Container';
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Hero from "@/components/Hero";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",

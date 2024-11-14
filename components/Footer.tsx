@@ -1,29 +1,24 @@
-import Image from "next/image"
-import Link from "next/link"
+import { Container } from "@mui/material"
 
 export default function Footer() {
   return (
-    <footer className="flex flex-col text-black-100 mt-5 border-t border-gray-100">
-      <div className="flex max-md:flex-col flex-wrap justify-between gap-5 sm:px-16 px-6 py-10">
-        <div className="flex flex-col items-start justify-start gap-6">
-          <Image src="/logo.svg" alt="logo" width={118} height={18} className="object-contain"/>
-          <p className="text-gray-700 text-base">CarsHub 2024<br/> All rights reserved &copy;</p>
-
-          
+    <footer className="bg-gray-800 text-white py-4">
+      <Container maxWidth="lg" className="flex justify-between items-center">
+        <div>
+          <p>&copy; 2024 All rights reserved.</p>
         </div>
-
-        <div className="footer__links">
-          links
+        <div className="flex space-x-4">
+          <a href="https://www.linkedin.com/in/max-im" target="_blank" rel="noopener noreferrer">
+            LinkedIn
+          </a>
+          <a href="https://github.com/max-im" target="_blank" rel="noopener noreferrer">
+            GitHub
+          </a>
+          <a href="https://www.youtube.com/@maksym.pozhydaiev" target="_blank" rel="noopener noreferrer">
+            YouTube
+          </a>
         </div>
-
-      </div>
-      <div className="items-center flex justify-between flex-wrap mt-10 border-t border-gray-100 sm:px-16 px-6 py-10">
-        <p className="a">@2024 CursHub all rights resirved</p>
-        <div className="footer__copyrights-link">
-          <Link href="/" className="text-gray-500">Privacy Policy</Link>
-          <Link href="/" className="text-gray-500">Terms and Conditions</Link>
-        </div>
-      </div>
+      </Container>
     </footer>
-  )
+  );
 }

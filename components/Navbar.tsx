@@ -1,14 +1,11 @@
 'use client'
 
-// import Link from "next/link"
-// import Image from "next/image"
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
-
 
 export default function Navbar() {
   return (
@@ -20,15 +17,7 @@ export default function Navbar() {
             noWrap
             component="a"
             href="#app-bar-with-responsive-menu"
-            sx={{
-              mr: 2,
-              display: 'flex',
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
+            sx={{ mr: 2 }}
           >
             LOGO
           </Typography>

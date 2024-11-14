@@ -1,23 +1,17 @@
 "use client"
 
-import Image from 'next/image';
+import React from 'react';
 
-const Hero = () => {
+export default function Hero() {
   return (
-    <div className="hero">
-      <div className="flex-1 pt-36 padding-x">
-        <h1 className="hero__title">Find, Book or Rent a car --quickly and easily</h1>
-        <p className="hero__subtitle">Streamline your car reantal experiance with our effortless booking process.</p>
-
+    <section className="bg-blue-600 text-white py-20">
+      <div className="container mx-auto text-center">
+        <h1 className="text-5xl font-bold mb-4">Welcome to Our Website</h1>
+        <p className="text-xl mb-8">We are glad to have you here. Explore our content and enjoy your stay!</p>
+        <a href="#content" className="bg-white text-blue-600 px-6 py-3 rounded-full font-semibold">
+          Get Started
+        </a>
       </div>
-      <div className="hero__image-container">
-        <div className="hero__image">
-          {/* <Image src="/hero.png" alt="hero" fill className='object-contain' /> */}
-        </div>
-          <div className='hero__image-overlay '/>
-      </div>
-    </div>
-  )
+    </section>
+  );
 }
-
-export default Hero
