@@ -28,6 +28,14 @@ export default function Navbar() {
               </Button>
           </Box>
           <Box sx={{ flexGrow: 0 }}></Box>
+          <Box sx={{ flexGrow: 1, display: 'flex', justifyContent: 'end' }}>
+              <Button
+                sx={{ my: 2, color: 'white', display: 'flex', alignItems: 'right' }}
+                href="https://github.com/Max-im/interview-questions"
+              >
+                GitHub
+              </Button>
+          </Box>
         </Toolbar>
       </Container>
     </AppBar>
