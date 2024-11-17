@@ -1,11 +1,13 @@
 import fs from 'fs';
 import path from 'path';
+import content from '../content';
 
 export const getTasks = () => {
-    const folderPath = path.join(process.cwd(), 'tasks');
-    const files = fs.readdirSync(folderPath);
-    files.sort();
-    return files.map(file => getFilename(file));
+    // const folderPath = path.join(process.cwd(), 'tasks');
+    // const files = fs.readdirSync(folderPath);
+    // files.sort();
+    // return files.map(file => getFilename(file));
+    return content;
 }
 
 export const getFilename = (filename: string) => {

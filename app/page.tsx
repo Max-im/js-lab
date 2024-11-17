@@ -1,18 +1,15 @@
 import Hero from "@/components/Hero";
 import TaskCard from "@/components/TaskCard";
-import { getTasks, getTitle } from '@/utils';
-import Link from 'next/link';
+import { getTasks } from '@/utils';
 
 export default function Home() {
-  const files = getTasks();
+  const tasks = getTasks();
 
   return (
     <div>
       <Hero />
       <ul className="flex mt-5 justify-between">
-        {files.map(file => (<li key={file}>
-          <Link href={'/task/' + file}><TaskCard card={getTitle(file)} /></Link>
-        </li>))}
+        {tasks.map(task => <TaskCard key={task.index} task={task} />)}
       </ul>
     </div>
   );

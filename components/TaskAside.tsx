@@ -1,14 +1,13 @@
-import { getTasks, getTitle } from "@/utils";
 import Link from "next/link";
 
-export default function TaskAside({current}: {current: string}) {
-    const files = getTasks();
+export default function TaskAside({tasks, current}: {current: string, tasks: any[]}) {
+    console.log(current, tasks)
     return (
         <ul>
-            {files.map(file => (
-                <li key={file}>
-                    {current === file ? '> ' : ''}
-                    <Link href={'/task/' + file}>{getTitle(file)}</Link>
+            {tasks.map(task => (
+                <li key={task.index}>
+                    {current === task.slug ? '> ' : ''}
+                    <Link href={'/task/' + task.slug}>{task.title}</Link>
                 </li>))
             }
         </ul>
