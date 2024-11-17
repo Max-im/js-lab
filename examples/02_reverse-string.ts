@@ -1,3 +1,3 @@
-export default `function reverseString(str: string): string {
+export default `function reverseString(str) {
   return str.split('').reverse().join('');
 }`;

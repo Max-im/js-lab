@@ -6,6 +6,7 @@ import CodeEditor from "@/components/CodeEditor";
 export default function TaskPage({params: {filename}}: {params: {filename: string}}) {
   const tasks = getTasks();
   const task = tasks.find(task => task.slug === filename);
+  const next = tasks[task!.index] ? tasks[task!.index].slug : null;
 
   return (
     <div className={styles.container}>
@@ -16,7 +17,11 @@ export default function TaskPage({params: {filename}}: {params: {filename: strin
         <div>
           <h1 className={styles.title}>{task!.title}</h1>
         </div>
-        <CodeEditor className={styles.codeEditor} />
+        <CodeEditor
+          className={styles.codeEditor}
+          task={task!.code}
+          next={next}
+          />
       </div>
     </div>
   )
