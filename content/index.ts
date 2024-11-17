@@ -1,5 +1,7 @@
 import fizzBuzz from '../examples/01_fizzbuzz';
 import reverseString from '../examples/02_reverse-string';
+import palindrome from '../examples/03_palindrome';
+import reverseInteger from '../examples/04_reverse-integer';
 
 export default [
     {
@@ -19,5 +21,23 @@ export default [
         tags: ['easy'],
         code: reverseString,
         description: 'Write a function that reverses a string.'
-    }
+    },
+    {
+        title: 'Palindrome',
+        slug: 'palindrome',
+        index: 3,
+        level: 1,
+        tags: ['easy'],
+        code: palindrome,
+        description: 'Write a function that determines if a string is a palindrome.'
+    },
+    {
+        title: 'Reverse Integer',
+        slug: 'reverse-integer',
+        index: 4,
+        level: 1,
+        tags: ['easy'],
+        code: reverseInteger,
+        description: 'Write a function that reverses an integer.'
+    },
 ];
