@@ -12,6 +12,15 @@ export default function TaskPage({params: {filename}}: {params: {filename: strin
   const [results, setResults] = useState<IResult[]>([]);
   const tasks = getTasks();
   const task = tasks.find(task => task.slug === filename);
+
+  if (!task) {
+    return (
+      <div>
+        NOT found
+      </div>
+    )
+  }
+
   const next = tasks[task!.index] ? tasks[task!.index].slug : null;
 
   const check = (code: string) => {
