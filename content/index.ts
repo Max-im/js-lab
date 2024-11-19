@@ -3,6 +3,7 @@ import reverseString from '../examples/02_reverse-string';
 import palindrome from '../examples/03_palindrome';
 import reverseInteger from '../examples/04_reverse-integer';
 import {runTests as fizzBuzzTest} from '../testing/fizzbuzz.test';
+import fizzBuzzSolution from '../solutions/01_fizzbuzz';
 
 export default [
     {
@@ -13,7 +14,8 @@ export default [
         tags: ['easy'],
         code: fizzBuzz,
         description: 'Write a program that prints the numbers from 1 to 100. But for multiples of 3 print "Fizz" instead of the number and for the multiples of 5 print "Buzz". For numbers which are multiples of both 3 and 5 print "FizzBuzz".',
-        test: fizzBuzzTest
+        test: fizzBuzzTest,
+        solution: fizzBuzzSolution
     },
     {
         title: 'Reverse a String',
@@ -23,7 +25,8 @@ export default [
         tags: ['easy'],
         code: reverseString,
         description: 'Write a function that reverses a string.',
-        test: fizzBuzzTest
+        test: fizzBuzzTest,
+        solution: fizzBuzzSolution
     },
     {
         title: 'Palindrome',
@@ -33,7 +36,8 @@ export default [
         tags: ['easy'],
         code: palindrome,
         description: 'Write a function that determines if a string is a palindrome.',
-        test: fizzBuzzTest
+        test: fizzBuzzTest,
+        solution: fizzBuzzSolution
     },
     {
         title: 'Reverse Integer',
@@ -43,6 +47,7 @@ export default [
         tags: ['easy'],
         code: reverseInteger,
         description: 'Write a function that reverses an integer.',
-        test: fizzBuzzTest
+        test: fizzBuzzTest,
+        solution: fizzBuzzSolution
     },
 ];
