@@ -1,3 +1,5 @@
+'use client';
+
 import { getTasks } from "@/utils";
 import styles from './page.module.css';
 import TaskAside from "@/components/TaskAside";
@@ -7,6 +9,10 @@ export default function TaskPage({params: {filename}}: {params: {filename: strin
   const tasks = getTasks();
   const task = tasks.find(task => task.slug === filename);
   const next = tasks[task!.index] ? tasks[task!.index].slug : null;
+
+  const check = (code: string) => {
+    console.log(task?.test(code));
+  }
 
   return (
     <div className={styles.container}>
@@ -21,6 +27,7 @@ export default function TaskPage({params: {filename}}: {params: {filename: strin
           className={styles.codeEditor}
           task={task!.code}
           next={next}
+          run={check}
           />
       </div>
     </div>

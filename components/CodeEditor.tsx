@@ -5,7 +5,7 @@ import Editor from '@monaco-editor/react';
 import { Button, Typography } from "@mui/material";
 import Link from "next/link";
 
-export default function CodeEditor({className, task, next}: {className: string, task: string, next: string | null}) {
+export default function CodeEditor({className, task, next, run}: {className: string, task: string, next: string | null, run: any}) {
   const [activeTab, setActiveTab] = useState('code');
 
   const editorRef = useRef(null);
@@ -15,7 +15,7 @@ export default function CodeEditor({className, task, next}: {className: string, 
   }
 
   function showValue() {
-    alert(editorRef?.current?.getValue());
+    run(editorRef?.current?.getValue());
   }
 
   return (
