@@ -1,17 +1,24 @@
 'use client';
 
+import { useState } from "react";
 import { getTasks } from "@/utils";
 import styles from './page.module.css';
 import TaskAside from "@/components/TaskAside";
 import CodeEditor from "@/components/CodeEditor";
+import ResultsOutput from "@/components/ResultsOutput";
+import { IResult } from "@/types";
 
 export default function TaskPage({params: {filename}}: {params: {filename: string}}) {
+  const [results, setResults] = useState<IResult[]>([]);
   const tasks = getTasks();
   const task = tasks.find(task => task.slug === filename);
   const next = tasks[task!.index] ? tasks[task!.index].slug : null;
 
   const check = (code: string) => {
-    console.log(task?.test(code));
+    const result = task?.test(code);
+    if (result) {
+      setResults(result);
+    }
   }
 
   return (
@@ -28,7 +35,8 @@ export default function TaskPage({params: {filename}}: {params: {filename: strin
           task={task!.code}
           next={next}
           run={check}
-          />
+        />
+        <ResultsOutput results={results} />
       </div>
     </div>
   )

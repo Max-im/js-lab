@@ -1,5 +1,7 @@
+import { IResult } from "@/types";
+
 export function runTests(code: string) {
-    const results = [];
+    const results: IResult[] = [];
     const consoleLog = console.log;
     const logs: string[] | number[] = [];
     console.log = (message: string | number) => logs.push(message);
