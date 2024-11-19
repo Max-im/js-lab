@@ -2,8 +2,16 @@ import fizzBuzz from '../examples/01_fizzbuzz';
 import reverseString from '../examples/02_reverse-string';
 import palindrome from '../examples/03_palindrome';
 import reverseInteger from '../examples/04_reverse-integer';
+
 import {runTests as fizzBuzzTest} from '../testing/fizzbuzz.test';
+import {runTests as reverseStringTest} from '../testing/reverseString.test';
+import {runTests as palindromTest} from '../testing/palindrome.test';
+import {runTests as reverseIntTest} from '../testing/reverseInteger.test';
+
 import fizzBuzzSolution from '../solutions/01_fizzbuzz';
+import reverseStringSolution from '../solutions/02_reverse-string';
+import palindromSolution from '../solutions/03_palindrome';
+import reverseIntSolution from '../solutions/04_reverse-integer';
 
 export default [
     {
@@ -25,8 +33,8 @@ export default [
         tags: ['easy'],
         code: reverseString,
         description: 'Write a function that reverses a string.',
-        test: fizzBuzzTest,
-        solution: fizzBuzzSolution
+        test: reverseStringTest,
+        solution: reverseStringSolution
     },
     {
         title: 'Palindrome',
@@ -36,8 +44,8 @@ export default [
         tags: ['easy'],
         code: palindrome,
         description: 'Write a function that determines if a string is a palindrome.',
-        test: fizzBuzzTest,
-        solution: fizzBuzzSolution
+        test: palindromTest,
+        solution: palindromSolution
     },
     {
         title: 'Reverse Integer',
@@ -47,7 +55,7 @@ export default [
         tags: ['easy'],
         code: reverseInteger,
         description: 'Write a function that reverses an integer.',
-        test: fizzBuzzTest,
-        solution: fizzBuzzSolution
+        test: reverseIntTest,
+        solution: reverseIntSolution
     },
 ];

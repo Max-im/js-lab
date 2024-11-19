@@ -1,4 +1,8 @@
 export default `function isPalindrome(str) {
-  const reversed = str.split('').reverse().join('');
-  return str === reversed;
+  // your code below
+  
+  
+
+  
+  // your code above
 }`;
