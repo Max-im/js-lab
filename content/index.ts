@@ -12,8 +12,9 @@ import fizzBuzzSolution from '../solutions/01_fizzbuzz';
 import reverseStringSolution from '../solutions/02_reverse-string';
 import palindromSolution from '../solutions/03_palindrome';
 import reverseIntSolution from '../solutions/04_reverse-integer';
+import { ITask } from '@/types';
 
-export default [
+const tasks: ITask[] = [
     {
         title: 'Fizz Buzz',
         slug: 'fizz-buzz',
@@ -59,3 +60,5 @@ export default [
         solution: reverseIntSolution
     },
 ];
+
+export default tasks;

@@ -11,5 +11,6 @@ export interface ITask {
     tags: string[],
     code: string,
     description: string,
-    test: (code: string) => IResult[]
+    test: (code: string) => IResult[],
+    solution: string;
 };

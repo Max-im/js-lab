@@ -1,29 +1,27 @@
 import * as React from 'react';
-import Box from '@mui/material/Box';
-import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
-import { Chip } from '@mui/material';
+import { Box, Paper } from '@mui/material';
 import Link from 'next/link';
+import { ITask } from '@/types';
+import LinearProgress from '@mui/material/LinearProgress';
 
-export default function TaskCard({task}: {task: any}) {
+export default function TaskCard({task}: {task: ITask}) {
     return (
-        <li>
+        <Box sx={{width: '23%'}}>
             <Link href={'/task/' + task.slug}>
-                <Box sx={{ minWidth: 150, width: '20%' }}>
-                    <Card variant="outlined">
-                        <CardContent>
-                            <Typography gutterBottom sx={{ color: 'text.secondary', fontSize: 14 }}>
-                                {task.title}
-                            </Typography>
-                            <Typography sx={{ color: 'text.secondary', mb: 1.5 }}>Level: {task.level}</Typography>
-                            <ul>
-                                {task.tags.map((tag: string) => <li key={tag}><Chip label={tag} variant="outlined" /></li>)}
-                            </ul>
-                        </CardContent>
-                    </Card>
-                </Box>
+                <Paper>
+                    <CardContent>
+                        <Typography gutterBottom className="bold" sx={{ fontSize: 14, mb: 2 }}>
+                            {task.title}
+                        </Typography>
+                        <Typography variant="body2" sx={{fontSize: 10}} color="text.secondary">
+                            Complexety level
+                        </Typography>
+                        <LinearProgress color='warning' variant="determinate" value={task.level / 5 * 100} />
+                    </CardContent>
+                </Paper>
             </Link>
-        </li>
+        </Box>
     );
 }

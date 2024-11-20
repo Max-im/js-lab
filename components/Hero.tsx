@@ -1,17 +1,26 @@
 "use client"
 
+import { Box, Button, Paper, Typography } from '@mui/material';
+import Link from 'next/link';
 import React from 'react';
 
-export default function Hero() {
+export default function Hero({first}: {first: string}) {
   return (
-    <section className="bg-blue-600 text-white py-20">
-      <div className="container mx-auto text-center">
-        <h1 className="text-5xl font-bold mb-4">Welcome to Our Website</h1>
-        <p className="text-xl mb-8">We are glad to have you here. Explore our content and enjoy your stay!</p>
-        <a href="#content" className="bg-white text-blue-600 px-6 py-3 rounded-full font-semibold">
-          Get Started
-        </a>
-      </div>
-    </section>
+    <>
+      <Box className="py-5">
+        Logo
+      </Box>
+      <Paper className="py-20">
+        <Box className="container mx-auto text-center">
+          <Typography variant='h2' className="font-bold mb-4">Welcome to Our Website</Typography>
+          <Typography className="mb-8">
+            Passing interview is a key to getting job of your dream, so don't waste your time and be prepared.
+          </Typography>
+          <Button variant="contained" className="bg-black px-5 py-3 rounded-full">
+            <Link href={'/task/'+ first}>Get Started</Link>
+          </Button>
+        </Box>
+      </Paper>
+    </>
   );
 }

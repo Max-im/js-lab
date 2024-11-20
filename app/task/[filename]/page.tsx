@@ -1,7 +1,6 @@
 'use client';
 
 import { useRef, useState } from "react";
-import { getTasks } from "@/utils";
 import styles from './page.module.css';
 import TaskAside from "@/components/TaskAside";
 import ResultsOutput from "@/components/ResultsOutput";
@@ -9,13 +8,12 @@ import { Box, Button, Dialog, DialogTitle, Typography } from "@mui/material";
 import { IResult } from "@/types";
 import Link from "next/link";
 import { Editor } from "@monaco-editor/react";
-
+import tasks from '../../../content';
 
 export default function TaskPage({params: {filename}}: {params: {filename: string}}) {
   const [results, setResults] = useState<IResult[]>([]);
   const [open, setOpen] = useState<boolean>(false);
   const editorRef = useRef(null);
-  const tasks = getTasks();
   const task = tasks.find(task => task.slug === filename);
 
   if (!task) {
@@ -27,7 +25,7 @@ export default function TaskPage({params: {filename}}: {params: {filename: strin
   }
 
   const next = tasks[task!.index] ? tasks[task!.index].slug : null;
-  function handleEditorDidMount(editor) {
+  function handleEditorDidMount(editor: any) {
     editorRef.current = editor;
   }
 
