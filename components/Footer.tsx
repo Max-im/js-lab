@@ -14,9 +14,9 @@ export default function Footer() {
           <a href="https://github.com/max-im" target="_blank" rel="noopener noreferrer">
             GitHub
           </a>
-          <a href="https://www.youtube.com/@maksym.pozhydaiev" target="_blank" rel="noopener noreferrer">
+          {/* <a href="https://www.youtube.com/@maksym.pozhydaiev" target="_blank" rel="noopener noreferrer">
             YouTube
-          </a>
+          </a> */}
         </div>
       </Container>
     </footer>

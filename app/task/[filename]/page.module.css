@@ -1,80 +1,16 @@
 .container {
   display: flex;
-  min-height: 100vh;
-  font-family: Arial, sans-serif;
-}
-
-.sidebar {
-  width: 200px;
-  padding: 10px;
-  background-color: #f0f0f0;
-  border-right: 1px solid #ccc;
-}
-
-.fileList {
-  list-style-type: none;
-  padding: 0;
-}
-
-.fileItem {
-  margin: 5px 0;
-}
-
-.fileItem a {
-  text-decoration: none;
-  color: #333;
-}
-
-.fileItem a:hover {
-  text-decoration: underline;
+  min-height: calc(100vh - 56px);
 }
 
 .content {
   flex-grow: 1;
-  padding: 20px;
+  padding: 10px 10px 10px 30px;
 }
 
-.title {
-  font-size: 24px;
-  color: #333;
-  margin-bottom: 20px;
-}
-
-.tabs {
-  margin-top: 20px;
-}
-
-.tab {
-  padding: 10px 20px;
-  margin-right: 10px;
-  cursor: pointer;
-  background-color: #f0f0f0;
-  border: 1px solid #ccc;
-  border-bottom: none;
-}
-
-.activeTab {
-  background-color: #fff;
-  border-bottom: 1px solid #fff;
-}
-
-.tabContent {
-  border: 1px solid #ccc;
-  padding: 20px;
-  background-color: #fff;
-}
-
-/* Add some spacing and styling for the CodeEditor component */
 .codeEditor {
   margin-top: 20px;
   border: 1px solid #ccc;
-  padding: 10px;
+  padding: 5px 10px 10px 10px;
   background-color: #f9f9f9;
-}
-
-/* Add some spacing and styling for the TaskAside component */
-.taskAside {
-  padding: 10px;
-  background-color: #f0f0f0;
-  border-right: 1px solid #ccc;
 }
