@@ -1,3 +1,5 @@
+'use client';
+
 import { ITask } from "@/types";
 import { Box, Paper } from "@mui/material";
 import List from '@mui/material/List';
@@ -17,11 +19,11 @@ export default function TaskAside({ tasks, current }: { current: string, tasks: 
             <List>
                 {tasks.map(task => (
                     <ListItem disablePadding key={task.index}>
-                        <ListItemButton>
-                            <Link href={'/task/' + task.slug} className={current === task.slug ? 'text-black font-bold' : 'text-gray-500'}>
-                                <ListItemText primary={task.title} />
-                            </Link>
-                        </ListItemButton>
+                        <Link href={`/task/${task.slug}`} style={{ width: '100%' }}>
+                            <ListItemButton>
+                                <ListItemText primary={task.title} className={current === task.slug ? 'text-black font-bold' : 'text-gray-500'}/>
+                            </ListItemButton>
+                        </Link>
                     </ListItem>
                 ))}
                 <Divider />

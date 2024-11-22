@@ -7,7 +7,7 @@ export default function ResultsOutput({results, onClose}: {results: IResult[], o
   if (results.every(result => result.passed)) {
     resultsData.push({passed: true, message: 'All tests passed'});
   } else {
-    resultsData = results;
+    resultsData = results.map((test, i) => ({passed: test.passed, message: `Test ${i+1}: ${test.message}`}));
   }
   return (
     <div>

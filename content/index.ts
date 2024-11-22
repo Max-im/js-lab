@@ -30,7 +30,7 @@ const tasks: ITask[] = [
         description: 'Write a program that prints the numbers from 1 to 100. But for multiples of 3 print "Fizz" instead of the number and for the multiples of 5 print "Buzz". For numbers which are multiples of both 3 and 5 print "FizzBuzz".',
         test: fizzBuzzTest,
         solution: fizzBuzzSolution,
-        examples: [],
+        examples: [`fizzBuzz(15) -> console.log(1, 2, 'Fizz', 4, 'Buzz', 'Fizz', 7, 8, 'Fizz', 'Buzz', 11, 'Fizz', 13, 14, 'FizzBuzz');`],
     },
     {
         title: 'Reverse a String',
@@ -43,7 +43,12 @@ const tasks: ITask[] = [
         description: 'Write a function that reverses a string.',
         test: reverseStringTest,
         solution: reverseStringSolution,
-        examples: [],
+        examples: [
+            `reverseString('hello') -> 'olleh';`,
+            `reverseString('world') -> 'dlrow';`,
+            `reverseString('racecar') -> 'racecar';`,
+            `reverseString('12345') -> '54321';`,
+        ],
     },
     {
         title: 'Palindrome',
@@ -56,7 +61,13 @@ const tasks: ITask[] = [
         description: 'Write a function that determines if a string is a palindrome.',
         test: palindromTest,
         solution: palindromSolution,
-        examples: [],
+        examples: [
+            `isPalindrome('racecar') -> true;`,
+            `isPalindrome('hello') -> false;`,
+            `isPalindrome('A man a plan a canal Panama') -> true;`,
+            `isPalindrome('No lemon no melon') -> true;`,
+            `isPalindrome('Was it a car or a cat I saw') -> true;`,
+        ],
     },
     {
         title: 'Reverse Integer',
@@ -69,7 +80,12 @@ const tasks: ITask[] = [
         description: 'Write a function that reverses an integer.',
         test: reverseIntTest,
         solution: reverseIntSolution,
-        examples: [],
+        examples: [
+            `reverseInt(123) -> 321;`,
+            `reverseInt(-456) -> -654;`,
+            `reverseInt(1000) -> 1;`,
+            `reverseInt(0) -> 0;`,
+        ],
     },
     {
         title: 'Anagram',

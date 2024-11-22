@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useState } from "react";
+import { useRef, useState, use } from "react";
 import styles from './page.module.css';
 import TaskAside from "@/components/TaskAside";
 import ResultsOutput from "@/components/ResultsOutput";
@@ -12,7 +12,8 @@ import tasks from '../../../content';
 import TaskInfo from "@/components/TaskInfo";
 import ShowSolution from "@/components/ShowSolution";
 
-export default function TaskPage({params: {filename}}: {params: {filename: string}}) {
+export default function TaskPage({params}: {params: Promise<{filename: string}>}) {
+  const { filename } = use(params);
   const [results, setResults] = useState<IResult[]>([]);
   const editorRef = useRef(null);
   const task = tasks.find(task => task.slug === filename);
