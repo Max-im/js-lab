@@ -15,7 +15,17 @@ export default function ShowSolution({task}: {task: ITask}) {
       </AccordionSummary>
       <AccordionDetails>
         <Box sx={{minWidth: '500px !important'}}>
-            <Editor height="40vh" defaultLanguage="javascript" value={task.solution} />
+            <Editor 
+              height="40vh" 
+              defaultLanguage="javascript" 
+              value={task.solution} 
+              options={{ 
+                readOnly: true, 
+                minimap: { enabled: false }, 
+                padding: { top: 0, bottom: 0 },
+                scrollBeyondLastLine: false, 
+              }} 
+            />
           </Box>
       </AccordionDetails>
     </Accordion>

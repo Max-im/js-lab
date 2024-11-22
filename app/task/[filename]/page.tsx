@@ -43,7 +43,16 @@ export default function TaskPage({params: {filename}}: {params: {filename: strin
         <TaskInfo task={task} />
         <Box className={styles.codeEditor}>
           <Typography sx={{mb: 1}} variant="body2">Write your solution</Typography>
-          <Editor height="40vh" defaultLanguage="javascript" defaultValue={task.code} onMount={handleEditorDidMount} />
+          <Editor
+            height="40vh"
+            defaultLanguage="javascript"
+            defaultValue={task.code}
+            options={{  
+              minimap: { enabled: false }, 
+              padding: { top: 0, bottom: 0 },
+              scrollBeyondLastLine: false, 
+            }}
+            onMount={handleEditorDidMount} />
         </Box>
         <Box sx={{mt:2, mb: 3}} className="flex justify-between">
           <Button onClick={check} className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500" variant="contained">Run</Button>
