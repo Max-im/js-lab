@@ -1,6 +1,7 @@
 'use client';
 
 import { useRef, useState, use } from "react";
+import { useRouter } from 'next/navigation';
 import styles from './page.module.css';
 import TaskAside from "@/components/TaskAside";
 import ResultsOutput from "@/components/ResultsOutput";
@@ -17,9 +18,11 @@ export default function TaskPage({params}: {params: Promise<{filename: string}>}
   const [results, setResults] = useState<IResult[]>([]);
   const editorRef = useRef(null);
   const task = tasks.find(task => task.slug === filename);
+  const router = useRouter();
 
   if (!task) {
-    return 'null';
+    router.replace('/404');
+    return null;
   }
 
   const next = tasks[task!.index] ? tasks[task!.index].slug : null;
@@ -61,7 +64,8 @@ export default function TaskPage({params}: {params: Promise<{filename: string}>}
         </Box>
         
         <ShowSolution task={task} />
-        {results.length > 0 && <ResultsOutput results={results} onClose={onClose} />}
+        {results.length > 0 && <ResultsOutput results={results} onClose={onClose} />
+        }
       </Box>
     </Box>
   )
