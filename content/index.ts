@@ -3,18 +3,21 @@ import reverseString from '../tasks/02_reverse-string';
 import palindrome from '../tasks/03_palindrome';
 import reverseInteger from '../tasks/04_reverse-integer';
 import anagram from '../tasks/05_anagram';
+import capitalize from '../tasks/06_capitalize';
 
 import {runTests as fizzBuzzTest} from '../testing/fizzbuzz.test';
 import {runTests as reverseStringTest} from '../testing/reverseString.test';
 import {runTests as palindromTest} from '../testing/palindrome.test';
 import {runTests as reverseIntTest} from '../testing/reverseInteger.test';
 import {runTests as anagramTest} from '../testing/anagram.test';
+import {runTests as capitalizeTest} from '../testing/capitalize.test';
 
 import fizzBuzzSolution from '../solutions/01_fizzbuzz';
 import reverseStringSolution from '../solutions/02_reverse-string';
 import palindromSolution from '../solutions/03_palindrome';
 import reverseIntSolution from '../solutions/04_reverse-integer';
 import anagramSolution from '../solutions/05_anagram';
+import capitalizeSolution from '../solutions/06_capitalize';
 
 import { ITask } from '@/types';
 
@@ -27,7 +30,7 @@ const tasks: ITask[] = [
         levelName: 'easy',
         tags: ['easy'],
         code: fizzBuzz,
-        description: 'Write a program that prints the numbers from 1 to 100. But for multiples of 3 print "Fizz" instead of the number and for the multiples of 5 print "Buzz". For numbers which are multiples of both 3 and 5 print "FizzBuzz".',
+        description: 'Write a program that prints the numbers from 1 to the passed param. But for multiples of 3 print "Fizz" instead of the number and for the multiples of 5 print "Buzz". For numbers which are multiples of both 3 and 5 print "FizzBuzz".',
         test: fizzBuzzTest,
         solution: fizzBuzzSolution,
         examples: [`fizzBuzz(15) -> console.log(1, 2, 'Fizz', 4, 'Buzz', 'Fizz', 7, 8, 'Fizz', 'Buzz', 11, 'Fizz', 13, 14, 'FizzBuzz');`],
@@ -73,7 +76,7 @@ const tasks: ITask[] = [
         title: 'Reverse Integer',
         slug: 'reverse-integer',
         index: 4,
-        level: 2,
+        level: 1,
         levelName: 'easy',
         tags: ['easy'],
         code: reverseInteger,
@@ -91,7 +94,7 @@ const tasks: ITask[] = [
         title: 'Anagram',
         slug: 'anagram',
         index: 5,
-        level: 2,
+        level: 1,
         levelName: 'easy',
         tags: ['easy'],
         code: anagram,
@@ -104,6 +107,24 @@ const tasks: ITask[] = [
             `anagram('abc', 'abcd') -> false;`,
             `anagram('Listen', 'Silent') -> true;`,
             `anagram('conversation', 'voices rant on') -> true;`
+        ]
+    },
+    {
+        title: 'Capitalize',
+        slug: 'capitalize',
+        index: 6,
+        level: 1,
+        levelName: 'easy',
+        tags: ['easy'],
+        code: capitalize,
+        description: 'Write a function that accepts a string. The function should capitalize the first letter of each word in the string then return the capitalized string.',
+        test: capitalizeTest,
+        solution: capitalizeSolution,
+        examples: [
+            `capitalize('hello') -> 'Hello';`,
+            `capitalize('world') -> 'World';`,
+            `capitalize('a short sentence') -> 'A Short Sentence';`,
+            `capitalize('this is a test') -> 'This Is A Test';`,
         ]
     },
 ];
