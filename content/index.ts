@@ -7,6 +7,7 @@ import reverseInt from './reverse-int';
 import anagram from './anagram';
 import capitalize from './capitalize';
 import chank from './chank';
+import maxChar from './max-char';
 
 const tasks: ITask[] = [
     fizzBuzz,
@@ -16,6 +17,7 @@ const tasks: ITask[] = [
     anagram,
     capitalize,
     chank,
+    maxChar,
 ];
 
 export default tasks;
