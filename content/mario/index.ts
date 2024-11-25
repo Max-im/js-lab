@@ -14,9 +14,9 @@ const task: Omit<ITask, 'index'> = {
     test,
     solution,
     examples: [
-        `mario(1) -> console.log('#\n');`,
-        `mario(2) -> console.log('# \n##\n');`,
-        `mario(3) -> console.log('#  \n## \n###\n');`,
+        `mario(1) -> console.log('#\\n');`,
+        `mario(2) -> console.log('# \\n##\\n');`,
+        `mario(3) -> console.log('#  \\n## \\n###\\n');`,
     ]
 };
 
