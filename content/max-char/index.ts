@@ -3,10 +3,9 @@ import code from "./maxchar.task";
 import solution from "./maxchar.solution";
 import { runTests as test } from "./maxchar.test";
 
-const task: ITask = {
+const task: Omit<ITask, 'index'> = {
     title: 'Max Char',
     slug: 'maxchar',
-    index: 8,
     level: 2,
     levelName: 'medium',
     tags: ['medium'],

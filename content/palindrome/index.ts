@@ -3,10 +3,9 @@ import code from "./palindrome.task";
 import solution from "./palindrome.solution";
 import { runTests as test } from "./palindrome.test";
 
-const task: ITask = {
+const task: Omit<ITask, 'index'> = {
     title: 'Palindrome',
     slug: 'palindrome',
-    index: 3,
     level: 1,
     levelName: 'easy',
     tags: ['easy'],

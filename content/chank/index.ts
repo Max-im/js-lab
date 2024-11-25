@@ -3,10 +3,9 @@ import code from "./chank.task";
 import solution from "./chank.solution";
 import { runTests as test } from "./chank.test";
 
-const task: ITask = {
+const task: Omit<ITask, 'index'> = {
     title: 'Array Chunking',
     slug: 'chank',
-    index: 7,
     level: 2,
     levelName: 'medium',
     tags: ['medium'],

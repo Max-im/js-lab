@@ -3,10 +3,9 @@ import code from "./fizzbuzz.task";
 import solution from "./fizzbuzz.solution";
 import {runTests as test} from "./fizzbuzz.test";
 
-const task: ITask = {
+const task: Omit<ITask, 'index'> = {
     title: 'Fizz Buzz',
     slug: 'fizz-buzz',
-    index: 1,
     level: 1,
     levelName: 'easy',
     tags: ['easy'],

@@ -8,6 +8,7 @@ import anagram from './anagram';
 import capitalize from './capitalize';
 import chank from './chank';
 import maxChar from './max-char';
+import mario from './mario';
 
 const tasks: ITask[] = [
     fizzBuzz,
@@ -18,6 +19,7 @@ const tasks: ITask[] = [
     capitalize,
     chank,
     maxChar,
-];
+    mario
+].map((task, index) => ({ ...task, index: index + 1 }));
 
 export default tasks;

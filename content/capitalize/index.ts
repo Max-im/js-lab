@@ -3,10 +3,9 @@ import code from "./capitalize.task";
 import solution from "./capitalize.solution";
 import { runTests as test } from "./capitalize.test";
 
-const task: ITask = {
+const task: Omit<ITask, 'index'> = {
     title: 'Capitalize',
     slug: 'capitalize',
-    index: 6,
     level: 1,
     levelName: 'easy',
     tags: ['easy'],

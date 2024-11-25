@@ -3,10 +3,9 @@ import code from "./reverse-integer.task";
 import solution from "./reverse-integer.solution";
 import { runTests as test } from "./reverseInteger.test";
 
-const task: ITask = {
+const task: Omit<ITask, 'index'> = {
     title: 'Reverse Integer',
     slug: 'reverse-integer',
-    index: 4,
     level: 1,
     levelName: 'easy',
     tags: ['easy'],

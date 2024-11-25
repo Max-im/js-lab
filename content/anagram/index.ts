@@ -3,10 +3,9 @@ import code from "./anagram.task";
 import solution from "./anagram.solution";
 import { runTests as test } from "./anagram.test";
 
-const task: ITask = {
+const task: Omit<ITask, 'index'> = {
     title: 'Anagram',
     slug: 'anagram',
-    index: 5,
     level: 1,
     levelName: 'easy',
     tags: ['easy'],

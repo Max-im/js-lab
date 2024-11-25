@@ -3,10 +3,9 @@ import code from "./reverse-string.task";
 import solution from "./reverse-string.solution";
 import { runTests as test } from "./reverseString.test";
 
-const task: ITask = {
+const task: Omit<ITask, 'index'> = {
     title: 'Reverse a String',
     slug: 'reverse-string',
-    index: 2,
     level: 1,
     levelName: 'easy',
     tags: ['easy'],
