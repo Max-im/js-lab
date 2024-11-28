@@ -12,6 +12,7 @@ export class Task implements ITask {
     description: string;
     test: (code: string) => IResult[];
     solution: string;
+    examples: string[];
 
     constructor(task: ITask) {
         this.title = task.title;
@@ -24,6 +25,7 @@ export class Task implements ITask {
         this.description = task.description;
         this.test = task.test;
         this.solution = task.solution;
+        this.examples = task.examples;
     }
 
     static getTasks() {
