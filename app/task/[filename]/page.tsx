@@ -12,11 +12,12 @@ import { Editor } from "@monaco-editor/react";
 import tasks from '../../../content';
 import TaskInfo from "@/components/TaskInfo";
 import ShowSolution from "@/components/ShowSolution";
+import { editor as monacoEditor } from "monaco-editor";
 
 export default function TaskPage({params}: {params: Promise<{filename: string}>}) {
   const { filename } = use(params);
   const [results, setResults] = useState<IResult[]>([]);
-  const editorRef = useRef(null);
+  const editorRef = useRef<monacoEditor.IStandaloneCodeEditor | null>(null);
   const task = tasks.find(task => task.slug === filename);
   const router = useRouter();
 
@@ -25,14 +26,16 @@ export default function TaskPage({params}: {params: Promise<{filename: string}>}
     return null;
   }
 
-  const next = tasks[task!.index] ? tasks[task!.index].slug : null;
+  const next = tasks[task.index] ? tasks[task.index].slug : null;
 
-  function handleEditorDidMount(editor: any) {
+  function handleEditorDidMount(editor: monacoEditor.IStandaloneCodeEditor) {
     editorRef.current = editor;
   }
 
   const check = () => {
-    const result = task?.test(editorRef?.current?.getValue());
+    if (!editorRef.current) return;
+    const editor = editorRef.current;
+    const result = task?.test(editor.getValue());
     if (result) {
       setResults(result);
     }
