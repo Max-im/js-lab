@@ -3,7 +3,13 @@
 import { useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 
-const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GA_TRACKING_ID!;
+declare global {
+  interface Window {
+    gtag?: (command: string, trackingId: string, config: { page_path: string }) => void;
+  }
+}
+
+const GA_TRACKING_ID: string = process.env.NEXT_PUBLIC_GA_TRACKING_ID!;
 
 const Analytics = () => {
   const pathname = usePathname();
