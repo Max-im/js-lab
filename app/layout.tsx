@@ -1,8 +1,13 @@
+import Script from 'next/script';
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Container from '@mui/material/Container';
 import Footer from "@/components/Footer";
+import Analytics from './analytics';
+
+const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GA_TRACKING_ID!;
+console.log('aaaaaaaaaaaaaaaaaaaaaa================>>> ', GA_TRACKING_ID);
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -27,6 +32,26 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        {/* Add GA script */}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', '${GA_TRACKING_ID}', {
+                page_path: window.location.pathname,
+              });
+            `,
+        }}/>
+      </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <div className="flex flex-col min-h-screen w-full">
           <Container maxWidth="lg" className="flex-grow">
@@ -34,6 +59,7 @@ export default function RootLayout({
           </Container>
           <Footer />
         </div>
+        <Analytics />
       </body>
     </html>
   );
