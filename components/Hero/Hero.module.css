@@ -34,5 +34,19 @@
 }
 
 .device {
-    right: 50px;
+    margin-top: 30px;
 }
+
+@media (min-width: 768px) {
+    .device {
+        right: 50px;
+        rotate: -3deg;
+    }
+}
+
+@media (min-width: 1024px) {
+    .device {
+        /* Additional styles for desktop */
+    }
+}
+
