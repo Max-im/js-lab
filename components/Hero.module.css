@@ -1,0 +1,38 @@
+.accentblock {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 40px 0px 0px 40px;
+    width: 20%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.accentblock__text {
+    text-wrap: nowrap;
+    letter-spacing: 1.2;
+    position: relative;
+    left: -40px;
+}
+.accentblock__text:before {
+    content: attr(data-text);
+    position: absolute;
+    left: 0px;
+    top: 40px;
+    opacity: 0.6;
+}
+
+.accentblock__text:after {
+    content: attr(data-text);
+    position: absolute;
+    left: 0px;
+    top: 80px;
+    opacity: 0.3;
+}
+
+.device {
+    right: 50px;
+}

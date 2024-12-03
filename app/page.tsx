@@ -28,8 +28,7 @@ export default function Home() {
 
   return (
     <>
-      <Header amount={tasks.length} />
-      <Hero first={tasks[0].slug} />
+      <Hero />
       <FilterLabels levels={levels} handleClick={onFilter} />
       <ul className="flex mt-5 flex-wrap justify-between">
         {tasks.map(task => <TaskCard key={task.index} task={task} />)}
