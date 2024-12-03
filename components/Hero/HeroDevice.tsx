@@ -23,8 +23,8 @@ const HeroDevice: FC = () => {
       <Image
         src="/hero-device.svg"
         alt="Device"
-        width={isMobile ? 260 : 400}
-        height={isMobile ? 260 : 400}
+        width={isMobile ? 300 : 400}
+        height={isMobile ? 300 : 400}
         objectFit="contain"
         className={`${styles.device} relative`}
       />

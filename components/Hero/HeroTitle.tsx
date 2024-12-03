@@ -3,17 +3,17 @@
 import { FC } from 'react';
 import { Button } from '@mui/material';
 import Link from 'next/link';
+import styles from './Hero.module.css';
 
 const HeroTitle: FC = () => {
   return (
-    <>
-    {/* md:text-1xl */}
-      <p className='mb-5 text-white text-left text-3xl sm:text-2xl'>
-        <b className="text-3">3</b> part of <b className="accent__text">success</b> are:
+    <div className={styles.title}>
+      <p className="mb-5 text-white text-left text-2xl md:text-3xl">
+        <b className="text-3 animate-pulse">3</b> part of <b className="accent__text">success</b> are:
       </p>
       <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-left">
         LUCK <br/>
-        <span className="accent__text text-5xl sm:text-7xl">PRACTICE</span> <br />
+        <span className="animate-pulse accent__text text-5xl sm:text-7xl">PRACTICE</span> <br />
         and COFFEE
       </h1>
       <div className="flex flex-row space-y-0 space-x-4 items-center">
@@ -24,7 +24,7 @@ const HeroTitle: FC = () => {
           Read More
         </Button>
       </div>
-    </>
+    </div>
   );
 }
 

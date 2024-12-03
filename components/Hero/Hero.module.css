@@ -1,52 +1,155 @@
-.accentblock {
+.asideblock {
     position: absolute;
-    top: 0;
-    right: 0;
-    border-radius: 40px 0px 0px 40px;
-    width: 20%;
-    height: 100%;
+    bottom: 0;
+    left: 0;
+    border-radius: 10px 10px 0px 0px;
+    width: 100%;
+    height: 7%;
+    animation: slideUp 1.2s ease-in-out;
+    animation-delay: 0.6s;
+    animation-fill-mode: forwards;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    transform: translateY(100%);
 }
 
-.accentblock__text {
+
+.asideblock__text {
     text-wrap: nowrap;
     letter-spacing: 1.2;
     position: relative;
-    left: -40px;
-}
-.accentblock__text:before {
-    content: attr(data-text);
-    position: absolute;
     left: 0px;
-    top: 40px;
-    opacity: 0.6;
+    
+}
+.asideblock__text:before {
+    content: '';
+    display: none;
 }
 
-.accentblock__text:after {
-    content: attr(data-text);
-    position: absolute;
-    left: 0px;
-    top: 80px;
-    opacity: 0.3;
+.asideblock__text:after {
+    content: '';
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .asideblock {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: auto;
+        border-radius: 40px 0px 0px 40px;
+        width: 20%;
+        height: 100%;
+        animation: slideIn 1.5s ease-in-out;
+        animation-delay: 0.2s;
+        animation-fill-mode: forwards;
+    }
+    
+    .asideblock__text {
+        text-wrap: nowrap;
+        letter-spacing: 1.2;
+        position: relative;
+        left: -40px;
+        rotate: -90deg;
+    }
+    .asideblock__text:before {
+        content: attr(data-text);
+        position: absolute;
+        left: 0px;
+        top: 40px;
+        opacity: 0.6;
+        display: block;
+    }
+    
+    .asideblock__text:after {
+        content: attr(data-text);
+        position: absolute;
+        left: 0px;
+        top: 80px;
+        opacity: 0.3;
+        display: block;
+    }
 }
 
 .device {
     margin-top: 30px;
+    animation: slideDown10 1s ease-out;
+    animation-fill-mode: forwards;
 }
 
 @media (min-width: 768px) {
     .device {
         right: 50px;
-        rotate: -3deg;
+        rotate: -6deg;
+        opacity: 0;
+        animation: slideRight10r 1.3s ease-out;
+        animation-fill-mode: forwards;
     }
 }
 
 @media (min-width: 1024px) {
     .device {
-        /* Additional styles for desktop */
+        margin-top: 0px;
+        
     }
 }
 
+
+.title {
+    animation: slideRight10 1s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideDown10 {
+    from {
+        transform: translateY(-10%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideRight10r {
+    from {
+        transform: translateX(-10%);
+        rotate: -6deg;
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        rotate: -3deg;
+        opacity: 1;
+    }
+}
+
+@keyframes slideRight10 {
+    from {
+        transform: translateX(-10%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+  
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}

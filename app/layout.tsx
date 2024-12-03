@@ -1,7 +1,7 @@
 import Script from 'next/script';
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import "./globals.css";
+import "./styles/globals.css";
 import Container from '@mui/material/Container';
 import Footer from "@/components/Footer";
 import Analytics from './analytics';
@@ -20,7 +20,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "js-lab | Code Checking Platform",
+  title: "JS-Lab | Code Checking Platform",
   description: "A platform for checking and reviewing code. The most popular interview questions and tasks.",
 };
 
