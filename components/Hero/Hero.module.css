@@ -74,29 +74,28 @@
 }
 
 .device {
-    margin-top: 30px;
     animation: slideDown10 1s ease-out;
     animation-fill-mode: forwards;
     position: relative;
 }
 
+.deviceWrapper {
+    top: 50px;
+}
+
 @media (min-width: 768px) {
-    .device {
-        right: 50px;
+    .deviceWrapper {
+        /* background: var(--light-accent); */
+        left: -10%;
+        top: 50px;
+        padding: 10px;
+        animation: slideRight10r 1.3s ease-out;
         rotate: -6deg;
         opacity: 0;
-        animation: slideRight10r 1.3s ease-out;
         animation-fill-mode: forwards;
-        margin-top: 100px;
     }
 }
 
-@media (min-width: 1024px) {
-    .device {
-        /* margin-top: 0px; */
-        
-    }
-}
 
 
 .title {

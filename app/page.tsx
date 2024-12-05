@@ -7,6 +7,7 @@ import { ITask, ITaskLevel } from "@/types";
 import { useState } from "react";
 import FilterLabels from "@/components/FilterLabels";
 import Header from "@/components/Header";
+import About from "@/components/About";
 
 export default function Home() {
   const tasksData = Task.getTasks();
@@ -29,10 +30,11 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <FilterLabels levels={levels} handleClick={onFilter} />
+      <About />
+      {/* <FilterLabels levels={levels} handleClick={onFilter} />
       <ul className="flex mt-5 flex-wrap justify-between">
         {tasks.map(task => <TaskCard key={task.index} task={task} />)}
-      </ul>
+      </ul> */}
     </>
   );
 }

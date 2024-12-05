@@ -19,7 +19,7 @@ const HeroDevice: FC = () => {
   }, []);
 
   return (
-    <div className='relative z-10'>
+    <div className={`${styles.deviceWrapper} relative rounded-lg z-10`}>
       <Image
         src="/hero-device.svg"
         alt="Device"
