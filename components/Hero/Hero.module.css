@@ -77,6 +77,7 @@
     margin-top: 30px;
     animation: slideDown10 1s ease-out;
     animation-fill-mode: forwards;
+    position: relative;
 }
 
 @media (min-width: 768px) {
@@ -86,12 +87,13 @@
         opacity: 0;
         animation: slideRight10r 1.3s ease-out;
         animation-fill-mode: forwards;
+        margin-top: 100px;
     }
 }
 
 @media (min-width: 1024px) {
     .device {
-        margin-top: 0px;
+        /* margin-top: 0px; */
         
     }
 }
@@ -99,6 +101,12 @@
 
 .title {
     animation: slideRight10 1s ease-out;
+    animation-delay: 0.8s;
+    transform: translateY(-10%);
+    opacity: 0;
+    animation-fill-mode: forwards;
+    position: relative;
+    z-index: 1;
 }
 
 @keyframes slideIn {

@@ -9,7 +9,7 @@ const HeroDevice: FC = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
+      setIsMobile(window.innerWidth <= 1024);
     };
 
     window.addEventListener('resize', handleResize);
@@ -26,7 +26,7 @@ const HeroDevice: FC = () => {
         width={isMobile ? 300 : 400}
         height={isMobile ? 300 : 400}
         objectFit="contain"
-        className={`${styles.device} relative`}
+        className={styles.device}
       />
     </div>
   );
