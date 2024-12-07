@@ -16,13 +16,13 @@
 }
 
 .title {
-    animation: slideRight10 1s ease-out;
-    animation-delay: 0.8s;
     transform: translateY(-10%);
     opacity: 0;
     animation-fill-mode: forwards;
     position: relative;
-    z-index: 1;
+}
+.title_animated {
+    animation: slideDown20px 1s ease-out;
 }
 
 .image {
@@ -41,38 +41,17 @@
     opacity: 1;
 }
 
-@keyframes slideIn {
-    from {
-        transform: translateX(100%);
-    }
-    to {
-        transform: translateX(0);
-    }
+
+.decor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: var(--light-accent);
+    z-index: -1;
 }
 
-@keyframes slideDown10 {
-    from {
-        transform: translateY(-10%);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-@keyframes slideRight10r {
-    from {
-        transform: translateX(-10%);
-        rotate: -6deg;
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        rotate: -3deg;
-        opacity: 1;
-    }
-}
 
 @keyframes slideRight10 {
     from {
@@ -84,12 +63,14 @@
         opacity: 1;
     }
 }
-  
-@keyframes slideUp {
+
+@keyframes slideDown20px {
     from {
-        transform: translateY(100%);
+        transform: translateY(-20px);
+        opacity: 0;
     }
     to {
         transform: translateY(0);
+        opacity: 1;
     }
 }
