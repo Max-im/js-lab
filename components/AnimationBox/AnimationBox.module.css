@@ -1,0 +1,20 @@
+.stabile {
+    transform: translateY(-10%);
+    opacity: 0;
+    animation-fill-mode: forwards;
+    position: relative;
+}
+.animated {
+    animation: slideDown20px 1s ease-out;
+}
+
+@keyframes slideDown20px {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
