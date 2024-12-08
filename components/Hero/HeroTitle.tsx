@@ -1,9 +1,8 @@
 "use client"
 
 import { FC } from 'react';
-import { Button } from '@mui/material';
-import Link from 'next/link';
 import { SlideRight } from '../AnimationBox';
+import StartBtn from '../Common/StartBtn';
 
 const HeroTitle: FC = () => {
   return (
@@ -18,9 +17,7 @@ const HeroTitle: FC = () => {
           and COFFEE
         </h1>
         <div className="flex flex-row space-y-0 space-x-4 items-center">
-          <Button className="accent hover:bg-emerald-800 text-white font-semibold py-2 sm:py-3 px-4 sm:px-6 shadow">
-            <Link href={'/task'}>Start Now</Link>
-          </Button>
+          <StartBtn />
           {/* <Button className="bg-white dark-accent__text hover:bg-gray-200 font-semibold py-2 sm:py-3 px-4 sm:px-6 shadow">
             Read More
           </Button> */}
