@@ -1,16 +1,46 @@
 .stabile {
-    transform: translateY(-10%);
-    opacity: 0;
     animation-fill-mode: forwards;
     position: relative;
+    opacity: 0;
 }
 .animated {
     animation: slideDown20px 1s ease-out;
 }
 
+.right {
+    animation: slideRight 1s ease-out;
+}
+
+.up {
+    animation: slideUp 1s ease-out;
+}
+
 @keyframes slideDown20px {
     from {
         transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+@keyframes slideRight {
+    from {
+        transform: translateX(-10%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(-20%);
         opacity: 0;
     }
     to {

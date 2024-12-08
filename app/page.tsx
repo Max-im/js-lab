@@ -12,7 +12,7 @@ export default function Home() {
     <>
       <Hero />
       <About />
-      <TaskBlock />
+      <TaskBlock num={tasks.length} />
     </>
   );
 }

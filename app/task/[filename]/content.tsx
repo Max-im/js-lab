@@ -20,10 +20,10 @@ export default function Content({filename}: {filename: string}) {
   const task = tasks.find(task => task.slug === filename);
   const router = useRouter();
 
-  // if (!task) {
-  //   router.replace('/404');
-  //   return null;
-  // }
+  if (!task) {
+    router.replace('/404');
+    return null;
+  }
 
   const next = tasks[task.index] ? tasks[task.index].slug : null;
 

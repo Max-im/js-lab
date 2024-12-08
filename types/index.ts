@@ -15,7 +15,6 @@ export interface ITask {
     test: (code: string) => IResult[],
     solution: string;
     examples: string[];
-    best: boolean
 };
 
 
