@@ -24,7 +24,7 @@ const TaskBlock = ({ num }: { num: number }) => {
             <p className="mb-4">
               Choose from three levels of complexity: <b className="accent__text">Easy</b>, <b className="accent__text">Medium</b>, and <b className="accent__text">Hard</b>, and progress at your own pace!
             </p>
-            <div className="hidden md:block">
+            <div className="hidden md:block" style={{ maxWidth: '150px' }}>
               <StartBtn />
             </div>
           </div>
