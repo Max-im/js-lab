@@ -1,10 +1,12 @@
 import Script from 'next/script';
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import "./globals.css";
+import "./styles/globals.css";
 import Container from '@mui/material/Container';
 import Footer from "@/components/Footer";
 import Analytics from './analytics';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GA_TRACKING_ID!;
 
@@ -20,7 +22,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "js-lab | Code Checking Platform",
+  title: "JS-Lab | Code Checking Platform",
   description: "A platform for checking and reviewing code. The most popular interview questions and tasks.",
 };
 
@@ -52,8 +54,8 @@ export default function RootLayout({
         }}/>
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <div className="flex flex-col min-h-screen w-full">
-          <Container maxWidth="lg" className="flex-grow">
+        <div className="flex flex-col min-h-screen w-full min-w-[320px]">
+          <Container maxWidth="xl" className="flex-grow">
             {children}
           </Container>
           <Footer />

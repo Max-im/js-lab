@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+:root {
+  --background: #ccede0;
+  --dark-accent: #0B2B2A;
+  --light-accent: #11C88B;
+  --foreground: #000000;
+  --accent: #0D996A;
+  --accent-hover: #0a7d59;
+}
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+} */
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: "Montserrat", sans-serif;
+}
+
+
+.dark-accent {
+  background: var(--dark-accent);
+}
+
+.dark-accent__text {
+  color: var(--dark-accent);
+}
+
+.accent {
+  background: var(--accent);
+}
+
+.accent-hover {
+  background: var(--accent-hover);
+}
+
+.accent__text {
+  color: var(--accent);
+}
+
+.accent__text-hover {
+  color: var(--accent-hover);
+}
+
+
+.rotate-90 {
+  transform: rotate(-90deg);
+}

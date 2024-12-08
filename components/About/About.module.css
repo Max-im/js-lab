@@ -1,0 +1,62 @@
+.deviceWrapper {
+    top: 50px;
+}
+
+@media (min-width: 768px) {
+    .deviceWrapper {
+        /* background: var(--light-accent); */
+        left: -10%;
+        top: 50px;
+        padding: 10px;
+        animation: slideRight10r 1.3s ease-out;
+        rotate: -6deg;
+        opacity: 0;
+        animation-fill-mode: forwards;
+    }
+}
+
+.title {
+    transform: translateY(-10%);
+    opacity: 0;
+    animation-fill-mode: forwards;
+    position: relative;
+}
+
+.image {
+    opacity: 0;
+    position: relative;
+}
+.image_animated {
+    animation: slideRight10 1s ease-out;
+    animation-delay: 0.8s;
+    position: relative;
+    opacity: 0;
+    animation-fill-mode: forwards;
+}
+
+.image.visible {
+    opacity: 1;
+}
+
+
+.decor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: var(--light-accent);
+    z-index: -1;
+}
+
+
+@keyframes slideRight10 {
+    from {
+        transform: translateX(-10%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}

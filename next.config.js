@@ -1,9 +1,13 @@
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // output: 'export',
-  // basePath: '/js-path',
-  // assetPrefix: '/js-path/',
+  async rewrites() {
+    return [
+      {
+        source: '/task/:task*',
+        destination: '/task/[filename]/index.tsx',
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;

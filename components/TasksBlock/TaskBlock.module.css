@@ -1,0 +1,34 @@
+.title {
+    transform: translateY(-10%);
+    opacity: 0;
+    animation-fill-mode: forwards;
+    position: relative;
+}
+.title_animated {
+    animation: slideDown20px 1s ease-out;
+}
+
+.link {
+}
+
+.easy{
+
+}
+.medium{
+
+}
+
+.hard{
+
+}
+
+@keyframes slideDown20px {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}   
