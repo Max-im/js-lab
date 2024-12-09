@@ -1,4 +1,5 @@
-import React from 'react'
+'use client';
+
 import { SlideDown } from '../AnimationBox'
 
 export default function BlockTitle({title}: {title: string}) {

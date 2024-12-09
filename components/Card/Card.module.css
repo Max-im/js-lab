@@ -1,0 +1,79 @@
+.card {
+    min-height: 370px;
+    width: 300px;
+    position: relative;
+    border: 3px solid var(--dark-accent);
+    border-bottom-width: 10px;
+    border-top-width: 5px;
+    z-index: 20;
+    padding: 1.5rem 10px 1rem 10px;
+    transition: all 0.3s ease;
+    background-color: white;
+    opacity: 0.8;
+}
+
+.card:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.level {
+    position: absolute;
+    top: -1px;
+    left: 25%;
+    width: 50%;
+    background-color: var(--dark-accent);
+    color: white;
+    text-align: center;
+    font-variant: small-caps;
+    font-size: 12px;
+    padding: 1px 0.5rem;
+}
+
+.level::before,
+.level::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid var(--dark-accent);
+}
+
+.level::before {
+    left: -20px;
+}
+
+.level::after {
+    right: -20px;
+}
+
+.title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    margin-top: 0.8rem;
+}
+
+.startBtn {
+    background-color: var(--accent);
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.startBtn:hover {
+    background-color: var(--accent-hover);
+}
+
+.description {
+    font-size: 14px;
+    margin-top: 0.5rem;
+    line-height: 1.5;
+}

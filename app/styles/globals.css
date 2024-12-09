@@ -4,7 +4,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
 :root {
-  --background: #ccede0;
+  /* --background: #ccede0; */
+  --background: #d6e2dd;
   --dark-accent: #0B2B2A;
   --light-accent: #11C88B;
   --foreground: #000000;

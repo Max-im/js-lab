@@ -1,17 +1,20 @@
 .stabile {
-    animation-fill-mode: forwards;
     position: relative;
     opacity: 0;
+    visibility: hidden;
 }
 .animated {
+    animation-fill-mode: forwards;
     animation: slideDown20px 1s ease-out;
 }
 
 .right {
+    animation-fill-mode: forwards;
     animation: slideRight 1s ease-out;
 }
 
 .up {
+    animation-fill-mode: forwards;
     animation: slideUp 1s ease-out;
 }
 
@@ -22,7 +25,7 @@
     }
     to {
         transform: translateY(0);
-        opacity: 1;
+        opacity: 1 !important;
     }
 }
 
@@ -31,6 +34,7 @@
     from {
         transform: translateX(-10%);
         opacity: 0;
+        /* visibility: visible; */
     }
     to {
         transform: translateX(0);
@@ -45,6 +49,6 @@
     }
     to {
         transform: translateY(0);
-        opacity: 1;
+        opacity: 1 !important;
     }
 }

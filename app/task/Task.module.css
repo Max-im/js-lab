@@ -1,0 +1,12 @@
+.hero {
+    min-height: 250px;
+    position: relative;
+    color: white;
+    z-index: 10;
+}
+
+@media (min-width: 768px) {    
+    .hero {
+        min-height: 500px;
+    }
+}
