@@ -1,15 +1,15 @@
-"use client"
+"use client";
 
 import { FC } from 'react';
-import { Typography } from '@mui/material';
 import styles from './Hero.module.css';
 
 const HeroAsideDecor: FC = () => {
+  const text = 'JS-Lab: Code Checking Platform';
   return (
     <div className={`${styles.asideblock} accent rounded-lg`}>
-      <Typography variant='h6' className={`${styles.asideblock__text} text-1xl md:text-4xl`} data-text="JS-Lab: Code Checking Platform">
-        JS-Lab: Code Checking Platform
-      </Typography>
+      <p className={`${styles.asideblock__text} text-1xl md:text-4xl`} data-text={text}>
+        {text}
+      </p>
     </div>
   );
 }

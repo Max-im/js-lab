@@ -14,7 +14,7 @@ export default function TaskAside({ tasks, current }: { current: string, tasks: 
     return (
         <Paper sx={{ flex: '0 0 22%', pt: 2 }} elevation={0}>
             <Box sx={{ mb: 3, display: 'flex', justifyContent: 'center' }}>
-                <Link href="/"><Image src="/logo.jpg" alt="JS-Lab" width={60} height={60} /></Link>
+                <Link href="/"><Image src="/logo.png" alt="JS-Lab" width={60} height={60} /></Link>
             </Box>
             <List>
                 {tasks.map(task => (

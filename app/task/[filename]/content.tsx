@@ -9,12 +9,13 @@ import { Box, Button, Typography } from "@mui/material";
 import { IResult } from "@/types";
 import Link from "next/link";
 import { Editor } from "@monaco-editor/react";
-import tasks from '../../../content';
 import TaskInfo from "@/components/TaskInfo";
 import ShowSolution from "@/components/ShowSolution";
 import { editor as monacoEditor } from "monaco-editor";
+import { Task } from "@/app/models/Task";
 
 export default function Content({filename}: {filename: string}) {
+  const tasks = Task.getTasks();
   const [results, setResults] = useState<IResult[]>([]);
   const editorRef = useRef<monacoEditor.IStandaloneCodeEditor | null>(null);
   const task = tasks.find(task => task.slug === filename);
