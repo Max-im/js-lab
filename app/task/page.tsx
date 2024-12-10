@@ -9,8 +9,17 @@ import { SlideRight } from '@/components/AnimationBox';
 import HeroAsideDecor from '@/components/Common/HeroAsideDecor';
 import HeroBgDecor from '@/components/Hero/HeroBgDecor';
 import { useSearchParams } from 'next/navigation';
+import { Suspense } from 'react';
 
 export default function Tasks() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <TasksContent />
+    </Suspense>
+  );
+}
+
+function TasksContent() {
   const searchParams = useSearchParams();
   const level = searchParams.get('level');
   const tasks = level ? Task.getTasksByLevel(level) : Task.getTasks();
@@ -49,5 +58,5 @@ export default function Tasks() {
         </div>
       </main>
     </>
-  )
+  );
 }
