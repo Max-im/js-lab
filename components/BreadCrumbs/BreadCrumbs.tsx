@@ -13,7 +13,7 @@ export default function BreadCrumbs({ path }: {path: {name: string, path: string
   const links = path.slice(0, path.length - 1);
     
   return (
-    <div role="presentation">
+    <div role="presentation" className="mt-1 ml-2">
       <Breadcrumbs aria-label="breadcrumb">
         <Link underline="hover" color="inherit" href="/">
           Home

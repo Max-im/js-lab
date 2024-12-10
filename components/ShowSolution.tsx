@@ -7,27 +7,31 @@ import { Box } from '@mui/material';
 import { Editor } from '@monaco-editor/react';
 import { ITask } from '@/types';
 
-export default function ShowSolution({task}: {task: ITask}) {
+export default function ShowSolution({ task }: { task: ITask }) {
   return (
-    <Accordion>
-      <AccordionSummary id="solution">
-        Show Solution
-      </AccordionSummary>
-      <AccordionDetails>
-        <Box sx={{minWidth: '500px !important'}}>
-            <Editor 
-              height="40vh" 
-              defaultLanguage="javascript" 
-              value={task.solution} 
-              options={{ 
-                readOnly: true, 
-                minimap: { enabled: false }, 
+    <div className="mt-3 md:mt-5 w-full lg:w-1/2">
+      <Accordion>
+        <AccordionSummary id="solution">
+          Show Solution
+        </AccordionSummary>
+        <AccordionDetails>
+          <Box>
+            <Editor
+              height="40vh"
+              defaultLanguage="javascript"
+              value={task.solution}
+              options={{
+                readOnly: true,
+                lineNumbers: 'off',
+                tabSize: 2,
+                minimap: { enabled: false },
                 padding: { top: 0, bottom: 0 },
-                scrollBeyondLastLine: false, 
-              }} 
+                scrollBeyondLastLine: false,
+              }}
             />
           </Box>
-      </AccordionDetails>
-    </Accordion>
+        </AccordionDetails>
+      </Accordion>
+    </div>
   );
 }

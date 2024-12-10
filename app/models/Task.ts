@@ -53,4 +53,11 @@ export class Task implements ITask {
             return content.filter(task => task.levelName === level).map(task => new Task(task));
         }
     }
+
+    static getTask(slug: string) {
+        const val = slug.toLowerCase();
+        const task = content.find(task => task.slug === val);
+        if (!task) return null;
+        return new Task(task);
+    }
 }

@@ -2,7 +2,6 @@
 
 import { Task } from '../models/Task';
 import Card from '@/components/Card';
-import styles from './Task.module.css';
 import Header from '@/components/Header';
 import BreadCrumbs from '@/components/BreadCrumbs';
 import { SlideDown, SlideRight } from '@/components/AnimationBox';
@@ -29,13 +28,13 @@ function TasksContent() {
 
   return (
     <>
-      <header className={`${styles.hero} w-full dark-accent rounded-lg relative`}>
+      <header className={`h-[500px] w-full dark-accent rounded-lg relative text-white`}>
         <Header />
         <div className='relative flex items-center justify-center'>
-          <div className="container mx-auto px-6 lg:px-20 flex flex-wrap items-center justify-between relative z-10">
+          <div className="container mx-auto px-6 flex flex-wrap items-center justify-between relative z-10">
             <div className="w-full lg:w-1/2">
               <SlideRight>
-                <div className="container mx-auto px-6 lg:px-20 py-3">
+                <div className="container mx-auto px-0 lg:px-14 py-3">
                   <h1 className="text-5xl sm:text-6xl mb-2">Tasks</h1>
                   <p className="text-xl sm:text-2xl">Available: <b className="text-3xl accent__text"><CountUp start={0} end={tasks.length} duration={2.5} /></b></p>
                 </div>
@@ -71,9 +70,7 @@ function TasksContent() {
 
         <HeroAsideDecor text="Select a Task" />
       </header>
-      <div className="mt-1 ml-2">
-        <BreadCrumbs path={[{ name: 'Tasks', path: '/task' }]} />
-      </div>
+      <BreadCrumbs path={[{ name: 'Tasks', path: '/task' }]} />
       <main>
         <div className="mt-7 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2 xl:gap-3 justify-items-center">
           {tasks.map((task, i) => <Card index={i} task={task} key={task.slug} />)}
