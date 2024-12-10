@@ -1,24 +1,41 @@
 .card {
-    min-height: 370px;
-    width: 280px;
+    max-height: 370px;
+    height: 100%;
+    min-height: 280px;
+    width: 100%;
+    max-width: 260px;
     position: relative;
     border: 3px solid var(--dark-accent);
-    border-bottom-width: 10px;
+    border-bottom-width: 12px;
     border-top-width: 5px;
     z-index: 20;
     padding: 1.5rem 20px 1rem 20px;
     transition: all 0.3s ease;
-    background-color: white;
+    background: linear-gradient(to bottom, white, lightgray);
     opacity: 0.8;
+}
+
+.card:after {
+    content: '';
+    position: absolute;
+    bottom: -7px;
+    border-radius: 5px;
+    left: 25%;
+    width: 50%;
+    height: 2px;
+    background: white;
+    z-index: 1;
+    opacity: 0.5;
 }
 
 .card:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(to bottom, lightgray, white);
 }
 
 @media (min-width: 768px) {
     .card {
-        width: 260px;
+        min-height: 350px;
     }
 }
 
@@ -33,7 +50,7 @@
     text-align: center;
     font-variant: small-caps;
     font-size: 12px;
-    padding: 1px 0.5rem;
+    padding: 0px 0.5rem;
 }
 
 .level::before,
@@ -43,17 +60,17 @@
     top: 0;
     width: 0;
     height: 0;
-    border-left: 20px solid transparent;
-    border-right: 20px solid transparent;
-    border-top: 20px solid var(--accent);
+    border-left: 18px solid transparent;
+    border-right: 18px solid transparent;
+    border-top: 18px solid var(--accent);
 }
 
 .level::before {
-    left: -20px;
+    left: -18px;
 }
 
 .level::after {
-    right: -20px;
+    right: -18px;
 }
 
 .title {

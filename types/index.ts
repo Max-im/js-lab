@@ -1,3 +1,6 @@
+export const ILevels = ['all', 'easy', 'medium', 'hard'] as const;
+export type ILevelType = typeof ILevels[number];
+
 export interface IResult {
     message: string;
     passed: boolean;

@@ -3,10 +3,12 @@
     position: relative;
     color: white;
     z-index: 10;
+    display: block;
+    overflow: hidden;
 }
 
 @media (min-width: 768px) {    
     .hero {
-        min-height: 500px;
+        height: 500px;
     }
 }

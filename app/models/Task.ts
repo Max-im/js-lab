@@ -1,4 +1,4 @@
-import { IResult, ITask, ITaskLevel } from "@/types";
+import { ILevels, ILevelType, IResult, ITask, ITaskLevel } from "@/types";
 import content from '@/content';
 
 export class Task implements ITask {
@@ -42,5 +42,15 @@ export class Task implements ITask {
         levels.unshift({name: 'all', current: true});
 
         return levels;
+    }
+
+    static getTasksByLevel(level: string) {
+        const lev = level.toLowerCase() as ILevelType;
+
+        if (lev === 'all' || !ILevels.includes(lev)) {
+            return content.map(task => new Task(task));
+        } else {
+            return content.filter(task => task.levelName === level).map(task => new Task(task));
+        }
     }
 }

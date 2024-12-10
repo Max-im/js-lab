@@ -2,7 +2,7 @@
 
 import { FC } from 'react';
 import HeroTitle from './HeroTitle';
-import HeroAsideDecor from './HeroAsideDecor';
+import HeroAsideDecor from '../Common/HeroAsideDecor';
 import HeroBgDecor from './HeroBgDecor';
 import HeroDevice from './HeroDevice';
 import Header from '../Header';
@@ -24,8 +24,8 @@ const Hero: FC = () => {
         </div>
         <HeroBgDecor />
       </div>
+      <HeroAsideDecor text="JS-Lab: Code Checking Platform" />
 
-      <HeroAsideDecor />
     </section>
   );
 }

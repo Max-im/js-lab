@@ -6,7 +6,7 @@ import { SlideDown } from '../AnimationBox';
 
 export default function Card({ task, index }: { task: ITask, index: number }) {
     const maxDescriptionLength = 100;
-    const delay = index * 100;
+    const delay = (index + 1) * 150;
 
     const truncateDescription = (description: string, maxLength: number) => {
         if (description.length > maxLength) {
@@ -17,7 +17,7 @@ export default function Card({ task, index }: { task: ITask, index: number }) {
 
     return (
         <SlideDown delay={delay}>
-            <div className={`${styles.card} rounded-lg mb-5 flex flex-col justify-between`}>
+            <div className={`${styles.card} rounded-lg flex flex-col justify-between`}>
                 <div className={styles.level}>{task.levelName}</div>
 
                 <div>
