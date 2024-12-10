@@ -39,7 +39,7 @@ body {
   background: var(--accent);
 }
 
-.accent-hover {
+.accent-hover:hover {
   background: var(--accent-hover);
 }
 
@@ -47,7 +47,7 @@ body {
   color: var(--accent);
 }
 
-.accent__text-hover {
+.accent__text-hover:hover {
   color: var(--accent-hover);
 }
 
