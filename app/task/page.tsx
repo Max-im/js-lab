@@ -12,12 +12,20 @@ import { Suspense } from 'react';
 import CountUp from 'react-countup';
 import Link from 'next/link';
 import { FaTasks, FaSmile, FaMeh, FaFrown } from 'react-icons/fa';
+import Head from 'next/head';
 
 export default function Tasks() {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <TasksContent />
-    </Suspense>
+    <>
+      <Head>
+        <title>JS-Lab | Interview Tasks</title>
+        <meta name="description" content="Browse and select tasks based on difficulty levels for interview preparation." />
+        <link rel="canonical" href="https://js-laboratory.vercel.app/task" />
+      </Head>
+      <Suspense fallback={<div>Loading...</div>}>
+        <TasksContent />
+      </Suspense>
+    </>
   );
 }
 

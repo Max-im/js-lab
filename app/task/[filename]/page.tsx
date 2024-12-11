@@ -15,6 +15,7 @@ import Header from "@/components/Header";
 import { SlideRight, SlideUp } from "@/components/AnimationBox";
 import HeroBgDecor from "@/components/Hero/HeroBgDecor";
 import Labels from "@/components/Labels";
+import Head from "next/head";
 
 export default function TaskPage({ params }: { params: Promise<{ filename: string }> }) {
   const { filename } = use(params);
@@ -49,7 +50,12 @@ export default function TaskPage({ params }: { params: Promise<{ filename: strin
 
   const breadcrumbs = [{ name: 'Tasks', path: '/task' }, { name: task.title, path: '/task/' + task.slug }];
 
-  return (
+  return (<>
+    <Head>
+      <title>JS-Lab | {task.title}</title>
+      <meta name="description" content={task.description} />
+      <link rel="canonical" href={`https://js-laboratory.vercel.app/task/${task.slug}`} />
+    </Head>
     <div>
       <header className="relative overflow-hidden text-white h-[500px] dark-accent rounded-lg z-10">
         <Header />
@@ -81,8 +87,6 @@ export default function TaskPage({ params }: { params: Promise<{ filename: strin
           <HeroBgDecor />
         </div>
       </header>
-
-
       <BreadCrumbs path={breadcrumbs} />
       <p className="text-md mt-10">{task.description}</p>
       <div className="container mx-auto flex flex-wrap items-start justify-between relative z-10">
@@ -121,5 +125,6 @@ export default function TaskPage({ params }: { params: Promise<{ filename: strin
       {results.length > 0 && <ResultsOutput results={results} onClose={onClose} />
       }
     </div>
+  </>
   );
 }
