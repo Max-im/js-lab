@@ -87,22 +87,26 @@ export default function TaskPage({ params }: { params: Promise<{ filename: strin
       <p className="text-md mt-10">{task.description}</p>
       <div className="container mx-auto flex flex-wrap items-start justify-between relative z-10">
 
-      <div className={`${styles.codeEditor} rounded-lg w-full lg:w-1/2`}>
-        <p className="mb-2">Write your solution</p>
-        <Editor
-          height="40vh"
-          defaultLanguage="javascript"
-          defaultValue={task.code}
-          options={{
-            minimap: { enabled: false },
-            padding: { top: 0, bottom: 0 },
-            scrollBeyondLastLine: false,
-            quickSuggestions: false,
-            suggestOnTriggerCharacters: false,
-          }}
-          onMount={handleEditorDidMount} />
-      </div>
-      <ShowSolution task={task} />
+        <div className={`${styles.codeEditor} rounded-lg w-full lg:w-1/2`}>
+          <p className="mb-2">Write your solution</p>
+          <Editor
+            height="40vh"
+            defaultLanguage="javascript"
+            defaultValue={task.code}
+            options={{
+              minimap: { enabled: false },
+              padding: { top: 0, bottom: 0 },
+              scrollBeyondLastLine: false,
+              quickSuggestions: false,
+              suggestOnTriggerCharacters: false,
+              acceptSuggestionOnEnter: "off",
+              wordBasedSuggestions: 'off',
+              parameterHints: { enabled: false },
+              tabCompletion: "off",
+            }}
+            onMount={handleEditorDidMount} />
+        </div>
+        <ShowSolution task={task} />
       </div>
       <div className="flex justify-between mt-2 mb-3">
         <button onClick={check} className="accent accent-hover rounded py-2 px-8 text-white">Run</button>
