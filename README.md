@@ -17,6 +17,7 @@ Number | Name                                                                   
 7      | [Mario](https://js-laboratory.vercel.app/task/mario)                     | Print a Mario-style pyramid                  | Easy   | Loop, Array
 8      | [Array Chunking](https://js-laboratory.vercel.app/task/chank)            | Split an array into chunks of a given size   | Medium | Array
 9      | [Max Char](https://js-laboratory.vercel.app/task/maxchar)                | Find the most frequent character in a string | Medium | String
+10     | [Binary Sum](https://js-laboratory.vercel.app/task/binary-sum)           | Calculate the sum of two binary numbers      | Hard   | String, Number
 
 ## Development
 

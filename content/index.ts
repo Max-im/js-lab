@@ -9,6 +9,7 @@ import capitalize from './capitalize';
 import chank from './chank';
 import maxChar from './max-char';
 import mario from './mario';
+import binarySum from './binary-sum';
 
 const tasks: ITask[] = [
     reverseString,
@@ -20,6 +21,7 @@ const tasks: ITask[] = [
     mario,
     chank,
     maxChar,
+    binarySum
 ].map((task, index) => ({ ...task, index: index + 1 }));
 
 export default tasks;
