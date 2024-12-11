@@ -15,8 +15,9 @@ export default function BreadCrumbs({ path }: {path: {name: string, path: string
   return (
     <div role="presentation" className="mt-1 ml-2">
       <Breadcrumbs aria-label="breadcrumb">
-        <Link underline="hover" color="inherit" href="/">
-          Home
+        <Link underline="hover" color="inherit" href="/" itemProp="itemListElement" itemScope itemType="http://schema.org/ListItem">
+          <meta itemProp="position" content="1" />
+          <span itemProp="name">Home</span>
         </Link>
 
         {links.map((item, index) => (
@@ -25,12 +26,21 @@ export default function BreadCrumbs({ path }: {path: {name: string, path: string
             underline="hover"
             color="inherit"
             href={item.path}
+            itemProp="itemListElement"
+            itemScope
+            itemType="http://schema.org/ListItem"
           >
-            {item.name}
+            <meta itemProp="position" content={(index + 2).toString()} />
+            <span itemProp="name">{item.name}</span>
           </Link>
         ))}
 
-      {last &&  <Typography sx={{ color: 'text.primary' }}>{last.name}</Typography>}
+      {last && (
+          <Typography sx={{ color: 'text.primary' }} itemProp="itemListElement" itemScope itemType="http://schema.org/ListItem">
+            <meta itemProp="position" content={(path.length).toString()} />
+            <span itemProp="name">{last.name}</span>
+          </Typography>
+        )}
       </Breadcrumbs>
     </div>
   );

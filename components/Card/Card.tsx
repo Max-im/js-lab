@@ -36,19 +36,22 @@ export default function Card({ task, index }: { task: ITask, index: number }) {
 
     return (
         <SlideDown delay={delay}>
-            <div className={`${styles.card} rounded-lg flex flex-col justify-between`}>
-                <div className={styles.level}>{task.levelName}</div>
+            <div className={`${styles.card} rounded-lg flex flex-col justify-between`} itemScope itemType="https://schema.org/Task">
+                <meta itemProp="name" content={task.title} />
+                <meta itemProp="description" content={task.description} />
+                <meta itemProp="url" content={'/task/' + task.slug} />
+                <div className={styles.level} itemProp="level">{task.levelName}</div>
 
                 <div className={`flex flex-col justify-between ${styles.contenWrapper}`}>
                     <div>
-                        <h4 className={styles.title}>{task.title}</h4>
-                        <p className={styles.description}>
+                        <h4 className={styles.title} itemProp="title">{task.title}</h4>
+                        <p className={styles.description} itemProp="description">
                             {truncateDescription(task.description, maxDescriptionLength)}
                         </p>
                     </div>
                     <Labels list={task.tags} />
                 </div>
-                <Link href={'/task/' + task.slug} className={`${styles.startBtn} py-1 px-4 sm:px-6 rounded`}>
+                <Link href={'/task/' + task.slug} className={`${styles.startBtn} py-1 px-4 sm:px-6 rounded`} itemProp="url">
                     Start Now
                 </Link>
             </div>

@@ -14,13 +14,31 @@ import Link from 'next/link';
 import { FaTasks, FaSmile, FaMeh, FaFrown } from 'react-icons/fa';
 import Head from 'next/head';
 
+const title = 'JS-Lab | Interview Tasks';
+const description = 'Browse and select tasks based on difficulty levels for interview preparation.';
+
 export default function Tasks() {
   return (
     <>
       <Head>
-        <title>JS-Lab | Interview Tasks</title>
-        <meta name="description" content="Browse and select tasks based on difficulty levels for interview preparation." />
+        <title>{title}</title>
+        <meta name="description" content={description} />
         <link rel="canonical" href="https://js-laboratory.vercel.app/task" />
+        {/* OpenGraph metadata */}
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content="https://js-laboratory.vercel.app/og-image.jpg" />
+        <meta property="og:url" content="https://js-laboratory.vercel.app/task" />
+        <meta property="og:type" content="website" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": title,
+            "description": description,
+            "url": "https://js-laboratory.vercel.app/task"
+          })}
+        </script>
       </Head>
       <Suspense fallback={<div>Loading...</div>}>
         <TasksContent />

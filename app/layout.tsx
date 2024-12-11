@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import Analytics from './analytics';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { title } from 'process';
 
 const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GA_TRACKING_ID!;
 
@@ -21,10 +22,10 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
-export const metadata: Metadata = {
-  title: "JS-Lab | Code Checking Platform",
-  description: "A platform for checking and reviewing code. The most popular interview questions and tasks.",
-};
+const title = "JS-Lab | Code Checking Platform";
+const description = "A platform for checking and reviewing code. The most popular interview questions and tasks.";
+
+export const metadata: Metadata = { title, description };
 
 export default function RootLayout({
   children,
@@ -36,6 +37,12 @@ export default function RootLayout({
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="canonical" href="https://js-laboratory.vercel.app" />
+        {/* OpenGraph metadata */}
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content="https://js-laboratory.vercel.app/og-image.jpg" />
+        <meta property="og:url" content="https://js-laboratory.vercel.app" />
+        <meta property="og:type" content="website" />
         {/* Add GA script */}
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
@@ -54,6 +61,15 @@ export default function RootLayout({
               });
             `,
         }}/>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": {title},
+            "description": {description},
+            "url": "https://js-laboratory.vercel.app"
+          })}
+        </script>
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <div className="flex flex-col min-h-screen w-full min-w-[320px]">

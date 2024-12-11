@@ -55,6 +55,21 @@ export default function TaskPage({ params }: { params: Promise<{ filename: strin
       <title>JS-Lab | {task.title}</title>
       <meta name="description" content={task.description} />
       <link rel="canonical" href={`https://js-laboratory.vercel.app/task/${task.slug}`} />
+      {/* OpenGraph metadata */}
+      <meta property="og:title" content={`JS-Lab | ${task.title}`} />
+      <meta property="og:description" content={task.description} />
+      <meta property="og:image" content="https://js-laboratory.vercel.app/og-image.jpg" />
+      <meta property="og:url" content={`https://js-laboratory.vercel.app/${task.slug}`} />
+      <meta property="og:type" content="website" />
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": `JS-Lab | ${task.title}`,
+          "description": task.description,
+          "url": `https://js-laboratory.vercel.app/task/${task.slug}`
+        })}
+      </script>
     </Head>
     <div>
       <header className="relative overflow-hidden text-white h-[500px] dark-accent rounded-lg z-10">
