@@ -11,15 +11,15 @@ import maxChar from './max-char';
 import mario from './mario';
 
 const tasks: ITask[] = [
-    fizzBuzz,
     reverseString,
     palindrome,
     reverseInt,
+    fizzBuzz,
     anagram,
     capitalize,
+    mario,
     chank,
     maxChar,
-    mario
 ].map((task, index) => ({ ...task, index: index + 1 }));
 
 export default tasks;

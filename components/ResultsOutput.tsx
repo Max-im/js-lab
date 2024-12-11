@@ -1,5 +1,5 @@
 import { IResult } from '@/types'
-import { Alert, Box, Dialog, DialogTitle } from '@mui/material'
+import { Alert, Dialog, DialogTitle } from '@mui/material'
 import React from 'react'
 
 export default function ResultsOutput({results, onClose}: {results: IResult[], onClose: () => void}) {
@@ -10,14 +10,14 @@ export default function ResultsOutput({results, onClose}: {results: IResult[], o
     resultsData = results.map((test, i) => ({passed: test.passed, message: `Test ${i+1}: ${test.message}`}));
   }
   return (
-    <div>
+    <div className="w-4/5">
       <Dialog onClose={onClose} open={true}>
           <DialogTitle>Checking Results:</DialogTitle>
-          <Box sx={{minWidth: '500px !important'}}>
+          <div>
             {resultsData.map((result, i) => (
                 <Alert key={i} severity={result.passed ? 'success' : 'error'}>{result.passed ? 'Passed' : result.message}</Alert>
             ))}
-          </Box>
+          </div>
         </Dialog>
     </div>
   )

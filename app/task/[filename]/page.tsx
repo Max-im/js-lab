@@ -14,8 +14,8 @@ import ResultsOutput from "@/components/ResultsOutput";
 import BreadCrumbs from "@/components/BreadCrumbs";
 import Header from "@/components/Header";
 import { SlideRight, SlideUp } from "@/components/AnimationBox";
-import { Chip } from "@mui/material";
 import HeroBgDecor from "@/components/Hero/HeroBgDecor";
+import Labels from "@/components/Labels";
 
 export default function TaskPage({ params }: { params: Promise<{ filename: string }> }) {
   const { filename } = use(params);
@@ -59,17 +59,7 @@ export default function TaskPage({ params }: { params: Promise<{ filename: strin
               <SlideRight>
                 <div className="container px-0 lg:px-14 mx-auto py-3">
                   <h1 className="text-5xl sm:text-6xl mb-2">{task.title}</h1>
-                  <ul className="mt-3">
-                    {task.tags.map(tag => <li key={tag}>
-                      <Chip
-                        variant='outlined'
-                        sx={{ mr: 1, fontSize: 9, fontWeight: 600 }}
-                        size="small"
-                        className='bg-white text-black'
-                        label={tag.toUpperCase()}
-                      />
-                    </li>)}
-                  </ul>
+                  <Labels list={task.tags} />
                 </div>
               </SlideRight>
             </div>
@@ -90,7 +80,6 @@ export default function TaskPage({ params }: { params: Promise<{ filename: strin
           </div>
           <HeroBgDecor />
         </div>
-
       </header>
 
 
@@ -109,6 +98,7 @@ export default function TaskPage({ params }: { params: Promise<{ filename: strin
             padding: { top: 0, bottom: 0 },
             scrollBeyondLastLine: false,
             quickSuggestions: false,
+            suggestOnTriggerCharacters: false,
           }}
           onMount={handleEditorDidMount} />
       </div>

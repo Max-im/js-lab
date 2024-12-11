@@ -97,7 +97,11 @@
 }
 
 .description {
-    font-size: 14px;
+    font-size: 0.8rem;
     margin-top: 0.5rem;
     line-height: 1.5;
+}
+
+.contenWrapper {
+    min-height: 150px;
 }

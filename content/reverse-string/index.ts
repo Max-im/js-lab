@@ -1,14 +1,14 @@
 import { ITask } from "@/types";
-import code from "./reverse-string.task";
-import solution from "./reverse-string.solution";
-import { runTests as test } from "./reverseString.test";
+import code from "./task";
+import solution from "./solution";
+import { runTests as test } from "./test";
 
 const task: Omit<ITask, 'index'> = {
     title: 'Reverse a String',
     slug: 'reverse-string',
     level: 1,
     levelName: 'easy',
-    tags: ['easy'],
+    tags: ['string'],
     code,
     description: 'Write a function that reverses a string.',
     test,

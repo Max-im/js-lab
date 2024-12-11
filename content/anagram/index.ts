@@ -1,14 +1,14 @@
 import { ITask } from "@/types";
-import code from "./anagram.task";
-import solution from "./anagram.solution";
-import { runTests as test } from "./anagram.test";
+import code from "./task";
+import solution from "./solution";
+import { runTests as test } from "./test";
 
 const task: Omit<ITask, 'index'> = {
     title: 'Anagram',
     slug: 'anagram',
     level: 1,
     levelName: 'easy',
-    tags: ['easy'],
+    tags: ['string'],
     code,
     description: 'Check if two strings are anagrams of each other. An anagram uses the same characters in the same quantity. Ignore spaces, punctuation, and case differences.',
     test,

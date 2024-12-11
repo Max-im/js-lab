@@ -1,14 +1,14 @@
 import { ITask } from "@/types";
-import code from "./chank.task";
-import solution from "./chank.solution";
-import { runTests as test } from "./chank.test";
+import code from "./task";
+import solution from "./solution";
+import { runTests as test } from "./test";
 
 const task: Omit<ITask, 'index'> = {
     title: 'Array Chunking',
     slug: 'chank',
     level: 2,
     levelName: 'medium',
-    tags: ['medium'],
+    tags: ['array'],
     code,
     description: 'Write a function that takes an array and chunk size as arguments and returns an array of arrays where each subarray has at most the specified number of elements.',
     test,

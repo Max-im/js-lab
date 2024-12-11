@@ -1,14 +1,14 @@
 import { ITask } from "@/types";
-import code from "./reverse-integer.task";
-import solution from "./reverse-integer.solution";
-import { runTests as test } from "./reverseInteger.test";
+import code from "./task";
+import solution from "./solution";
+import { runTests as test } from "./test";
 
 const task: Omit<ITask, 'index'> = {
     title: 'Reverse Integer',
     slug: 'reverse-integer',
     level: 1,
     levelName: 'easy',
-    tags: ['easy'],
+    tags: ['number'],
     code,
     description: 'Write a function that reverses an integer.',
     test,

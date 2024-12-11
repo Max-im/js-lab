@@ -1,14 +1,14 @@
 import { ITask } from "@/types";
-import code from "./mario.task";
-import solution from "./mario.solution";
-import { runTests as test } from "./mario.test";
+import code from "./task";
+import solution from "./solution";
+import { runTests as test } from "./test";
 
 const task: Omit<ITask, 'index'> = {
     title: 'Mario',
     slug: 'mario',
     level: 1,
     levelName: 'easy',
-    tags: ['easy'],
+    tags: ['array', 'loop'],
     code,
     description: 'Write a function `mario` that takes a number `n` and prints a right-aligned staircase of height `n` using the `#` character.',
     test,

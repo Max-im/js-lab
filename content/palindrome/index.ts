@@ -1,14 +1,14 @@
 import { ITask } from "@/types";
-import code from "./palindrome.task";
-import solution from "./palindrome.solution";
-import { runTests as test } from "./palindrome.test";
+import code from "./task";
+import solution from "./solution";
+import { runTests as test } from "./test";
 
 const task: Omit<ITask, 'index'> = {
     title: 'Palindrome',
     slug: 'palindrome',
     level: 1,
     levelName: 'easy',
-    tags: ['easy'],
+    tags: ['string', 'array'],
     code,
     description: 'Write a function that determines if a string is a palindrome.',
     test,

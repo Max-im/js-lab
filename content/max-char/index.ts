@@ -1,14 +1,14 @@
 import { ITask } from "@/types";
-import code from "./maxchar.task";
-import solution from "./maxchar.solution";
-import { runTests as test } from "./maxchar.test";
+import code from "./task";
+import solution from "./solution";
+import { runTests as test } from "./test";
 
 const task: Omit<ITask, 'index'> = {
     title: 'Max Char',
     slug: 'maxchar',
     level: 2,
     levelName: 'medium',
-    tags: ['medium'],
+    tags: ['string'],
     code,
     description: 'Given a string, return the character that is most commonly used in the string.',
     test,

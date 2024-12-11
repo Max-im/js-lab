@@ -1,0 +1,12 @@
+.tag {
+    display: inline-block;
+    padding: 0.15rem 0.4rem;
+    margin: 0.15rem;
+    border-radius: 1rem;
+    background-color: var(--light-accent);
+    color: var(--dark-accent);
+    font-size: 0.6rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    box-shadow:  0 0 0 1px white;
+}
