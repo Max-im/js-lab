@@ -40,7 +40,7 @@ function TasksContent() {
                 </div>
               </SlideRight>
             </div>
-            <div className="w-full lg:w-1/2 relative flex justify-start">
+            <div className="w-full md:w-1/2 relative flex justify-start">
               <div className="mt-3 md:mt-8 w-full lg:w-1/2 relative z-1">
                 <SlideDown>
                   <div className="rounded-lg bg-white w-full p-4 relative z-1 text-black flex flex-col space-y-2">
