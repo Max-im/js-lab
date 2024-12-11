@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://js-laboratory.vercel.app
+
+# Sitemaps
+Sitemap: https://js-laboratory.vercel.app/sitemap.xml

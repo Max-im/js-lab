@@ -5,9 +5,6 @@ import "./styles/globals.css";
 import Container from '@mui/material/Container';
 import Footer from "@/components/Footer";
 import Analytics from './analytics';
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import { title } from 'process';
 
 const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GA_TRACKING_ID!;
 
