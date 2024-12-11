@@ -97,12 +97,15 @@ export default function TaskPage({ params }: { params: Promise<{ filename: strin
               minimap: { enabled: false },
               padding: { top: 0, bottom: 0 },
               scrollBeyondLastLine: false,
+              lineHeight: 24,
+              fontSize: 14,
               quickSuggestions: false,
               suggestOnTriggerCharacters: false,
               acceptSuggestionOnEnter: "off",
               wordBasedSuggestions: 'off',
               parameterHints: { enabled: false },
               tabCompletion: "off",
+              smoothScrolling: true,
             }}
             onMount={handleEditorDidMount} />
         </div>
