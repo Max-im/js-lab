@@ -6,7 +6,6 @@ import styles from './page.module.css';
 import { IResult } from "@/types";
 import Link from "next/link";
 import { Editor } from "@monaco-editor/react";
-// import TaskInfo from "@/components/TaskInfo";
 import ShowSolution from "@/components/ShowSolution";
 import { editor as monacoEditor } from "monaco-editor";
 import { Task } from "@/app/models/Task";
@@ -34,6 +33,7 @@ export default function TaskPage({ params }: { params: Promise<{ filename: strin
 
   function handleEditorDidMount(editor: monacoEditor.IStandaloneCodeEditor) {
     editorRef.current = editor;
+    window.addEventListener("resize", () => editor.layout());
   }
 
   const check = () => {
@@ -106,6 +106,8 @@ export default function TaskPage({ params }: { params: Promise<{ filename: strin
               parameterHints: { enabled: false },
               tabCompletion: "off",
               smoothScrolling: true,
+              accessibilitySupport: "off",
+              useShadowDOM: false,
             }}
             onMount={handleEditorDidMount} />
         </div>
