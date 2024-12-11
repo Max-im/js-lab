@@ -14,10 +14,10 @@ import Link from 'next/link';
 import { FaTasks, FaSmile, FaMeh, FaFrown } from 'react-icons/fa';
 import Head from 'next/head';
 
-const title = 'JS-Lab | Interview Tasks';
-const description = 'Browse and select tasks based on difficulty levels for interview preparation.';
-
 export default function Tasks() {
+  const title = 'JS-Lab | Interview Tasks';
+  const description = 'Browse and select tasks based on difficulty levels for interview preparation.';
+  
   return (
     <>
       <Head>

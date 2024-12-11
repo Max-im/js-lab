@@ -5,6 +5,7 @@ import "./styles/globals.css";
 import Container from '@mui/material/Container';
 import Footer from "@/components/Footer";
 import Analytics from './analytics';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GA_TRACKING_ID!;
 
@@ -76,6 +77,7 @@ export default function RootLayout({
           <Footer />
         </div>
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
