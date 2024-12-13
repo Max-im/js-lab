@@ -20,10 +20,32 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
-const title = "JS-Lab | Code Checking Platform";
-const description = "A platform for checking and reviewing code. The most popular interview questions and tasks.";
+const title = "JS-Lab | Solve Coding Challenges and Prepare for Technical Interviews";
+const description =
+  "JS-Lab offers coding challenges and technical interview tasks to help you sharpen your programming skills. Practice real-world coding problems and ace your next interview.";
 
-export const metadata: Metadata = { title, description };
+
+export const metadata: Metadata = {
+  title,
+  description,
+  alternates: {
+    canonical: "https://js-laboratory.vercel.app",
+  },
+  openGraph: {
+    title,
+    description,
+    images: [
+      {
+        url: "https://js-laboratory.vercel.app/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: `Interview Tasks OG Image`,
+      },
+    ],
+    url: `https://js-laboratory.vercel.app/task`,
+    type: 'website',
+  },
+};
 
 export default function RootLayout({
   children,
@@ -34,13 +56,6 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="canonical" href="https://js-laboratory.vercel.app" />
-        {/* OpenGraph metadata */}
-        <meta property="og:title" content={title} />
-        <meta property="og:description" content={description} />
-        <meta property="og:image" content="https://js-laboratory.vercel.app/og-image.jpg" />
-        <meta property="og:url" content="https://js-laboratory.vercel.app" />
-        <meta property="og:type" content="website" />
         {/* Add GA script */}
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
@@ -65,7 +80,8 @@ export default function RootLayout({
             "@type": "WebSite",
             "name": {title},
             "description": {description},
-            "url": "https://js-laboratory.vercel.app"
+            "url": "https://js-laboratory.vercel.app",
+            "image": "https://js-laboratory.vercel.app/og-image.jpg",
           })}
         </script>
       </head>
