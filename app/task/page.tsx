@@ -61,7 +61,7 @@ function TasksContent() {
             <div className="w-full lg:w-1/2">
               <SlideRight>
                 <div className="container mx-auto px-0 lg:px-14 py-3">
-                  <h1 className="text-5xl sm:text-6xl mb-2">Tasks</h1>
+                  <h1 className="text-5xl sm:text-6xl mb-2" itemProp="headline">Tasks</h1>
                   <p className="text-xl sm:text-2xl">Available: <b className="text-3xl accent__text"><CountUp start={0} end={tasks.length} duration={2.5} /></b></p>
                 </div>
               </SlideRight>
@@ -70,19 +70,19 @@ function TasksContent() {
               <div className="mt-3 md:mt-8 w-full lg:w-1/2 relative z-1">
                 <SlideDown>
                   <div className="rounded-lg bg-white w-full p-4 relative z-1 text-black flex flex-col space-y-2">
-                    <Link href="/task?level=all" className="flex items-center space-x-2 p-2 bg-gray-200 rounded accent__text-hover">
+                    <Link href="/task?level=all" className="flex items-center space-x-2 p-2 bg-gray-200 rounded accent__text-hover" itemProp="url">
                       <FaTasks />
                       <span>All</span>
                     </Link>
-                    <Link href="/task?level=easy" className="flex items-center space-x-2 p-2 bg-green-200 rounded accent__text-hover">
+                    <Link href="/task?level=easy" className="flex items-center space-x-2 p-2 bg-green-200 rounded accent__text-hover" itemProp="url">
                       <FaSmile />
                       <span>Easy</span>
                     </Link>
-                    <Link href="/task?level=medium" className="flex items-center space-x-2 p-2 bg-yellow-200 rounded accent__text-hover">
+                    <Link href="/task?level=medium" className="flex items-center space-x-2 p-2 bg-yellow-200 rounded accent__text-hover" itemProp="url">
                       <FaMeh />
                       <span>Medium</span>
                     </Link>
-                    <Link href="/task?level=hard" className="flex items-center space-x-2 p-2 bg-red-200 rounded accent__text-hover">
+                    <Link href="/task?level=hard" className="flex items-center space-x-2 p-2 bg-red-200 rounded accent__text-hover" itemProp="url">
                       <FaFrown />
                       <span>Hard</span>
                     </Link>

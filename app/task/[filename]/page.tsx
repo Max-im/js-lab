@@ -79,7 +79,7 @@ export default function TaskPage({ params }: { params: Promise<{ filename: strin
             <div className="w-full lg:w-1/2">
               <SlideRight>
                 <div className="container px-0 lg:px-14 mx-auto py-3">
-                  <h1 className="text-5xl sm:text-6xl mb-2">{task.title}</h1>
+                  <h1 className="text-5xl sm:text-6xl mb-2" property="og:title" itemProp="name">{task.title}</h1>
                   <Labels list={task.tags} />
                 </div>
               </SlideRight>
@@ -134,7 +134,7 @@ export default function TaskPage({ params }: { params: Promise<{ filename: strin
       </div>
       <div className="flex justify-between mt-2 mb-3">
         <button onClick={check} className="accent accent-hover rounded py-2 px-8 text-white">Run</button>
-        <button disabled={!next} className="py-2 px-8 rounded bg-slate-50 hover:bg-slate-200 border-black"><Link href={'/task/' + next}>Next</Link></button>
+        <button disabled={!next} className="py-2 px-8 rounded bg-slate-50 hover:bg-slate-200 border-black"><Link href={'/task/' + next} property="og:url" itemProp="url">Next</Link></button>
       </div>
 
       {results.length > 0 && <ResultsOutput results={results} onClose={onClose} />

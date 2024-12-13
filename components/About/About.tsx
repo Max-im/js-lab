@@ -9,7 +9,7 @@ export default function About() {
         <BlockTitle title="About Us" />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <SlideRight>
-            <Image src="/deal.jpg" alt="Interview" width={500} height={300} className="rounded-lg" />
+            <Image src="/deal.jpg" itemProp="image" alt="Interview" width={500} height={300} className="rounded-lg" />
           </SlideRight>
           <div className="justify">
             <p className="mb-3">

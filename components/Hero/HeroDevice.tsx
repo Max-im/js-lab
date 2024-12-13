@@ -23,6 +23,7 @@ const HeroDevice: FC = () => {
       <Image
         src="/hero-device.svg"
         alt="Device"
+        itemProp="image"
         width={isMobile ? 300 : 400}
         height={isMobile ? 300 : 400}
         objectFit="contain"

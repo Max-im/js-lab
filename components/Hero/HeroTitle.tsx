@@ -11,10 +11,10 @@ const HeroTitle: FC = () => {
         <p className="mb-5 text-white text-left text-2xl md:text-3xl">
           <b className="text-3 animate-pulse">3</b> part of <b className="accent__text">success</b> are:
         </p>
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-left">
-          LUCK <br />
-          <span className="animate-pulse accent__text text-5xl sm:text-7xl">PRACTICE</span> <br />
-          and COFFEE
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-left" itemScope itemType="http://schema.org/CreativeWork">
+          <span itemProp="headline">LUCK</span> <br />
+          <span className="animate-pulse accent__text text-5xl sm:text-7xl" itemProp="alternativeHeadline">PRACTICE</span> <br />
+          <span itemProp="text">and COFFEE</span>
         </h1>
         <div className="flex flex-row space-y-0 space-x-4 items-center">
           <StartBtn />

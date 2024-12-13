@@ -26,6 +26,7 @@ const HeroBgDecor: FC = () => {
         alt="Device"
         width={isMobile ? 400 : 600}
         height={isMobile ? 300 : 600}
+        itemProp="image"
         objectFit="contain"
         className={`absolute rotate-[5deg] ${isMobile ? 'opacity-10': 'opacity-5'} blur-sm top-50 left-0`}
       />

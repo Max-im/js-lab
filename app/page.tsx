@@ -6,11 +6,10 @@ import About from "@/components/About";
 import TaskBlock from "@/components/TasksBlock";
 import Head from "next/head";
 
-const title = "JS-Lab | Home";
-const description = "A platform for checking and reviewing code. The most popular interview questions and tasks.";
-
 export default function Home() {
   const tasks = Task.getTasks();
+  const title = "JS-Lab | Home";
+  const description = "A platform for checking and reviewing code. The most popular interview questions and tasks.";
   
   return (
     <>
@@ -21,8 +20,8 @@ export default function Home() {
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "WebPage",
-            "name": {title},
-            "description": {description},
+            "name": title,
+            "description": description,
             "url": "https://js-laboratory.vercel.app"
           })}
         </script>
@@ -31,6 +30,8 @@ export default function Home() {
         <meta property="og:url" content="https://js-laboratory.vercel.app" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="https://js-laboratory.vercel.app/og-image.jpg" />
+        <meta property="og:site_name" content="JS-Lab" />
+        <meta property="og:locale" content="en_US" />
       </Head>
       <Hero />
       <About />
