@@ -5,7 +5,7 @@ import styles from './Card.module.css';
 import { SlideDown } from '../AnimationBox';
 import Labels from '../Labels';
 
-export default function Card({ task, index }: { task: ITask, index: number }) {
+export default function Card({ task }: { task: ITask}) {
     const [maxDescriptionLength, setMaxDescriptionLength] = React.useState(100);
 
     React.useEffect(() => {
@@ -25,7 +25,7 @@ export default function Card({ task, index }: { task: ITask, index: number }) {
         };
     }, []);
 
-    const delay = (index + 1) * 150;
+    const delay = 0;
 
     const truncateDescription = (description: string, maxLength: number) => {
         if (description.length > maxLength) {

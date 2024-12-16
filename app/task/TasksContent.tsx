@@ -1,7 +1,6 @@
 'use client';
 
 import { Task } from '../models/Task';
-import Card from '@/components/Card';
 import Header from '@/components/Header';
 import BreadCrumbs from '@/components/BreadCrumbs';
 import { SlideDown, SlideRight } from '@/components/AnimationBox';
@@ -11,7 +10,7 @@ import { useSearchParams } from 'next/navigation';
 import CountUp from 'react-countup';
 import Link from 'next/link';
 import { FaTasks, FaSmile, FaMeh, FaFrown } from 'react-icons/fa';
-
+import CardList from '@/components/Card';
 
 export default function TasksContent() {
     const searchParams = useSearchParams();
@@ -64,9 +63,7 @@ export default function TasksContent() {
         </header>
         <BreadCrumbs path={[{ name: 'Tasks', path: '/task' }]} />
         <main>
-          <div className="mt-7 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2 xl:gap-3 justify-items-center">
-            {tasks.map((task, i) => <Card index={i} task={task} key={task.slug} />)}
-          </div>
+          <CardList tasks={tasks} />
         </main>
       </>
     );
