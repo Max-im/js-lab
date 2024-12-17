@@ -13,6 +13,7 @@
     transition: all 0.3s ease;
     background: linear-gradient(to bottom, white, lightgray);
     opacity: 0.8;
+
 }
 
 .card:after {
@@ -33,6 +34,11 @@
     background: linear-gradient(to bottom, lightgray, white);
 }
 
+.card:hover .startBtn {
+    background-color: var(--accent);
+    color: white;
+}
+
 @media (min-width: 768px) {
     .card {
         min-height: 350px;
@@ -45,7 +51,7 @@
     top: -1px;
     left: 25%;
     width: 50%;
-    background-color: var(--accent);
+    background-color: var(--dark-accent);
     color: white;
     text-align: center;
     font-variant: small-caps;
@@ -62,7 +68,7 @@
     height: 0;
     border-left: 18px solid transparent;
     border-right: 18px solid transparent;
-    border-top: 18px solid var(--accent);
+    border-top: 18px solid var(--dark-accent);
 }
 
 .level::before {
@@ -74,26 +80,37 @@
 }
 
 .title {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-weight: bold;
     margin-bottom: 0.5rem;
     margin-top: 0.8rem;
 }
 
 .startBtn {
-    background-color: var(--accent);
-    border: none;
-    color: white;
+    background-color: white;
+    display: flex;
+    border: 2px solid var(--accent);
     text-align: center;
+    font-weight: bold;
     text-decoration: none;
-    display: block;
     font-size: 16px;
     cursor: pointer;
     transition: all 0.3s ease;
+    font-size: 0.8rem;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
 }
 
 .startBtn:hover {
-    background-color: var(--accent-hover);
+    background-color: var(--accent-hover) !important;
+    color: white;
+}
+
+@media (min-width: 768px) {
+    .startBtn {
+        font-size: 1rem;
+    }
 }
 
 .description {

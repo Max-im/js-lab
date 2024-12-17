@@ -11,7 +11,7 @@ function wait(ms: number = 100) {
 
 export default function CardList(params: { tasks: ITask[] }) {
     const { ref, inView } = useInView({
-        threshold: 0.1,
+        threshold: 0.5,
         triggerOnce: false,
     });
     const [tasks, setTasks] = useState<ITask[]>([]);
@@ -65,14 +65,19 @@ export default function CardList(params: { tasks: ITask[] }) {
         }
         const newTasks = params.tasks.slice(tasks.length, tasks.length + amount);
         for (const task of newTasks) {
-            setTasks(prevTasks => [...prevTasks, task]);
+            setTasks(prevTasks => {
+                if (!prevTasks.some(t => t.slug === task.slug)) {
+                    return [...prevTasks, task];
+                }
+                return prevTasks;
+            });
             await wait(200);
         }
     }
 
     return (
         <>
-            <div className={`mt-7 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2 xl:gap-3 justify-items-center`}>
+            <div className={`mt-7 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 xl:gap-3 justify-items-center`}>
                 {tasks.map((task) => <Card task={task} key={task.slug} />)}
             </div>
             <div ref={ref} className="loading"><span className="spinner"></span></div>

@@ -4,6 +4,7 @@ import { ITask } from '@/types';
 import styles from './Card.module.css';
 import { SlideDown } from '../AnimationBox';
 import Labels from '../Labels';
+import { FaCode } from "react-icons/fa6";
 
 export default function Card({ task }: { task: ITask}) {
     const [maxDescriptionLength, setMaxDescriptionLength] = React.useState(100);
@@ -36,7 +37,7 @@ export default function Card({ task }: { task: ITask}) {
 
     return (
         <SlideDown delay={delay}>
-            <div className={`${styles.card} rounded-lg flex flex-col justify-between`} itemScope itemType="https://schema.org/Task">
+            <div className={`${styles.card} rounded-lg flex flex-col justify-between mb-4`} itemScope itemType="https://schema.org/Task">
                 <meta itemProp="name" content={task.title} />
                 <meta itemProp="description" content={task.description} />
                 <meta itemProp="url" content={'/task/' + task.slug} />
@@ -45,14 +46,14 @@ export default function Card({ task }: { task: ITask}) {
                 <div className={`flex flex-col justify-between ${styles.contenWrapper}`}>
                     <div>
                         <h4 className={styles.title} itemProp="title">{task.title}</h4>
+                        <Labels list={task.tags} />
                         <p className={styles.description} itemProp="description">
                             {truncateDescription(task.description, maxDescriptionLength)}
                         </p>
                     </div>
-                    <Labels list={task.tags} />
                 </div>
                 <Link href={'/task/' + task.slug} className={`${styles.startBtn} py-1 px-4 sm:px-6 rounded`} itemProp="url">
-                    Start Now
+                    <FaCode className="mr-1" /> Start Now
                 </Link>
             </div>
         </SlideDown>

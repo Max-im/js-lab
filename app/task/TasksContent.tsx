@@ -19,7 +19,7 @@ export default function TasksContent() {
   
     return (
       <>
-        <header className={`h-[500px] w-full dark-accent rounded-lg relative text-white`}>
+        <header className={`h-[500px] w-full overflow-hidden dark-accent rounded-lg relative text-white`}>
           <Header />
           <div className='relative flex items-center justify-center'>
             <div className="container mx-auto px-6 flex flex-wrap items-center justify-between relative z-10">
@@ -27,7 +27,7 @@ export default function TasksContent() {
                 <SlideRight>
                   <div className="container mx-auto px-0 lg:px-14 py-3">
                     <h1 className="text-5xl sm:text-6xl mb-2" itemProp="headline">Tasks</h1>
-                    <p className="text-xl sm:text-2xl">Available: <b className="text-3xl accent__text"><CountUp start={0} end={tasks.length} duration={2.5} /></b></p>
+                    <p className="text-xl items-end flex sm:text-2xl">Available: <b className="ml-2 text-6xl accent__text"><CountUp start={0} end={tasks.length} duration={2.5} /></b></p>
                   </div>
                 </SlideRight>
               </div>
