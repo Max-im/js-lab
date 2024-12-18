@@ -13,6 +13,7 @@ const task: Omit<ITask, 'index'> = {
     description: 'Write a function that reverses an integer.',
     test,
     solution,
+    image: 'reversenumber.webp',
     examples: [
         `reverseInt(123) -> 321;`,
         `reverseInt(-456) -> -654;`,

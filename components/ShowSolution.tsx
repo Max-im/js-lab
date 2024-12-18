@@ -9,7 +9,7 @@ import { ITask } from '@/types';
 
 export default function ShowSolution({ task }: { task: ITask }) {
   return (
-    <div className="mt-3 md:mt-5 w-full lg:w-1/2">
+    <div>
       <Accordion>
         <AccordionSummary id="solution">
           Show Solution
