@@ -8,15 +8,14 @@ import HeroAsideDecor from '@/components/Common/HeroAsideDecor';
 import HeroBgDecor from '@/components/Hero/HeroBgDecor';
 import { useSearchParams } from 'next/navigation';
 import CountUp from 'react-countup';
-import Link from 'next/link';
-import { FaTasks, FaSmile, FaMeh, FaFrown } from 'react-icons/fa';
 import CardList from '@/components/Card';
+import LabelsFilter from '@/components/LabelsFilter';
+import LevelFilter from '@/components/LevelFilter';
 
 export default function TasksContent() {
     const searchParams = useSearchParams();
-    const level = searchParams.get('level');
-    const tasks = level ? Task.getTasksByLevel(level) : Task.getTasks();
-  
+    const tasks = Task.getFilteredTasks(searchParams);
+    
     return (
       <>
         <header className={`h-[500px] w-full overflow-hidden dark-accent rounded-lg relative text-white`}>
@@ -34,24 +33,7 @@ export default function TasksContent() {
               <div className="w-full md:w-1/2 relative flex justify-start">
                 <div className="mt-3 md:mt-8 w-full lg:w-1/2 relative z-1">
                   <SlideDown>
-                    <div className="rounded-lg bg-white w-full p-4 relative z-1 text-black flex flex-col space-y-2">
-                      <Link href="/task?level=all" className="flex items-center space-x-2 p-2 bg-gray-200 rounded accent__text-hover" itemProp="url">
-                        <FaTasks />
-                        <span>All</span>
-                      </Link>
-                      <Link href="/task?level=easy" className="flex items-center space-x-2 p-2 bg-green-200 rounded accent__text-hover" itemProp="url">
-                        <FaSmile />
-                        <span>Easy</span>
-                      </Link>
-                      <Link href="/task?level=medium" className="flex items-center space-x-2 p-2 bg-yellow-200 rounded accent__text-hover" itemProp="url">
-                        <FaMeh />
-                        <span>Medium</span>
-                      </Link>
-                      <Link href="/task?level=hard" className="flex items-center space-x-2 p-2 bg-red-200 rounded accent__text-hover" itemProp="url">
-                        <FaFrown />
-                        <span>Hard</span>
-                      </Link>
-                    </div>
+                    <LevelFilter />
                   </SlideDown>
                 </div>
               </div>
@@ -63,6 +45,7 @@ export default function TasksContent() {
         </header>
         <BreadCrumbs path={[{ name: 'Tasks', path: '/task' }]} />
         <main>
+          <LabelsFilter />
           <CardList tasks={tasks} />
         </main>
       </>

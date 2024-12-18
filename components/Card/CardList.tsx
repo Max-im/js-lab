@@ -11,7 +11,7 @@ function wait(ms: number = 100) {
 
 export default function CardList(params: { tasks: ITask[] }) {
     const { ref, inView } = useInView({
-        threshold: 0.5,
+        threshold: 0.1,
         triggerOnce: false,
     });
     const [tasks, setTasks] = useState<ITask[]>([]);
@@ -53,6 +53,10 @@ export default function CardList(params: { tasks: ITask[] }) {
             onAdd();
         }
     }, [inView]);
+    
+    useEffect(() => {
+        setTasks(params.tasks);
+    }, [params.tasks]);
 
     const onAdd = async () => {
         let amount = 0;

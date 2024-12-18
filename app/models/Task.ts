@@ -1,5 +1,6 @@
-import { ILevels, ILevelType, IResult, ITask, ITaskLevel } from "@/types";
+import { IResult, ITask, ITaskLevel } from "@/types";
 import content from '@/content';
+import { ReadonlyURLSearchParams } from "next/navigation";
 
 export class Task implements ITask {
     title: string;
@@ -33,25 +34,15 @@ export class Task implements ITask {
     }
 
     static getLevels() {
-        const levelsObj: {[key: string]: boolean} = {};
+        const levelsObj: { [key: string]: boolean } = {};
         content.forEach(task => {
             levelsObj[task.levelName] = true;
         });
 
-        const levels: ITaskLevel[] = Object.keys(levelsObj).map(level => ({name: level, current: false}));
-        levels.unshift({name: 'all', current: true});
+        const levels: ITaskLevel[] = Object.keys(levelsObj).map(level => ({ name: level, current: false }));
+        levels.unshift({ name: 'all', current: true });
 
         return levels;
-    }
-
-    static getTasksByLevel(level: string) {
-        const lev = level.toLowerCase() as ILevelType;
-
-        if (lev === 'all' || !ILevels.includes(lev)) {
-            return content.map(task => new Task(task));
-        } else {
-            return content.filter(task => task.levelName === level).map(task => new Task(task));
-        }
     }
 
     static getTask(slug: string) {
@@ -59,5 +50,38 @@ export class Task implements ITask {
         const task = content.find(task => task.slug === val);
         if (!task) return null;
         return new Task(task);
+    }
+
+    static getFilteredTasks(searchParams: ReadonlyURLSearchParams) {
+        const level = searchParams.get('level');
+        const label = searchParams.get('label');
+
+        const selectedLevel = level ? level.toLowerCase() : null;
+        const selectedLabel = label ? label.toLowerCase() : null;
+
+        let tasks = content.map(task => new Task(task));
+        
+        if (selectedLabel) {
+            tasks = tasks.filter(task => task.tags.includes(selectedLabel));
+        }
+        
+        if (selectedLevel && selectedLevel !== 'all') {
+            tasks = tasks.filter(task => task.levelName === selectedLevel);
+        }
+        return tasks;
+
+    }
+
+    static getLabels() {
+        const labels: string[] = [];
+        content.forEach(task => {
+            task.tags.forEach(tag => {
+                if (!labels.includes(tag)) {
+                    labels.push(tag);
+                }
+            });
+        });
+
+        return labels;
     }
 }
