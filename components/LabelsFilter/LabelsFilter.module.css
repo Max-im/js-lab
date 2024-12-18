@@ -1,0 +1,31 @@
+.btn {
+    background-color: white;
+    display: flex;
+    border: 2px solid var(--accent);
+    text-align: center;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.8rem;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.8;
+}
+
+.btn:hover {
+    background-color: rgb(204, 202, 202);
+    opacity: 1;
+}
+
+.btn_active {
+    background-color: var(--accent);
+    color: white;
+}
+
+.btn_active:hover {
+    opacity: 1;
+    background-color: var(--accent-hover);
+}
