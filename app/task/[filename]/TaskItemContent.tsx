@@ -15,10 +15,12 @@ import { Editor } from "@monaco-editor/react";
 import { editor as monacoEditor } from "monaco-editor";
 import { FcIdea } from "react-icons/fc";
 import NavArrows from "@/components/NavArrows";
+import ShowSolution from "@/components/ShowSolution";
 
 export default function TaskItemContent({ filename }: { filename: string }) {
   const editorRef = useRef<monacoEditor.IStandaloneCodeEditor | null>(null);
   const [results, setResults] = useState<IResult[]>([]);
+  const [showSolution, setShowSolution] = useState<boolean>(false);
   const tasks = Task.getTasks();
   const task = Task.getTask(filename);
   const router = useRouter();
@@ -45,7 +47,10 @@ export default function TaskItemContent({ filename }: { filename: string }) {
     }
   };
 
-  const onClose = () => setResults([]);
+  const onClose = () => {
+    setResults([]);
+    setShowSolution(false);
+  };
 
   const breadcrumbs = [{ name: 'Tasks', path: '/task' }, { name: task.title, path: '/task/' + task.slug }];
 
@@ -84,7 +89,7 @@ export default function TaskItemContent({ filename }: { filename: string }) {
             </div>}
 
             <div className="mt-5 flex justify-between align-middle">
-              <button className="flex rounded py-2 px-4 bg-white">
+              <button className="flex rounded py-2 px-4 bg-white" onClick={() => setShowSolution(true)}>
                 <FcIdea size={18} className="mr-2" /> Show Solution
               </button>
               <NavArrows prev={prev} next={next} />
@@ -98,7 +103,7 @@ export default function TaskItemContent({ filename }: { filename: string }) {
             <div className={`${styles.codeEditor}`}>
               <p className="mb-2">Write your solution</p>
               <Editor
-                height="40vh"
+                height="50vh"
                 defaultLanguage="javascript"
                 defaultValue={task.code}
                 options={{
@@ -125,7 +130,7 @@ export default function TaskItemContent({ filename }: { filename: string }) {
         </div>
       </div>
 
-
+      {showSolution && <ShowSolution solution={task.solution} onClose={onClose} />}
       {results.length > 0 && <ResultsOutput results={results} onClose={onClose} />}
     </div>
   );
