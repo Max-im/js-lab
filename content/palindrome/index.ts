@@ -13,6 +13,7 @@ const task: Omit<ITask, 'index'> = {
     description: 'Write a function that determines if a string is a palindrome.',
     test,
     solution,
+    image: 'palindrome.webp',
     examples: [
         `isPalindrome('racecar') -> true;`,
         `isPalindrome('hello') -> false;`,

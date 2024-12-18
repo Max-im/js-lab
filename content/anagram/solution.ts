@@ -1,3 +1,4 @@
+
 export default `function anagram(stringA, stringB) {
     function cleanString(str) {
       return str

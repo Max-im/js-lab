@@ -13,6 +13,7 @@ const task: Omit<ITask, 'index'> = {
     description: 'Given a string, return the character that is most commonly used in the string.',
     test,
     solution,
+    image: '',
     examples: [
         `maxChar('a') -> 'a'`,
         `maxChar('Hello') -> 'l'`,
