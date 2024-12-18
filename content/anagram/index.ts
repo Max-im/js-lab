@@ -13,7 +13,7 @@ const task: Omit<ITask, 'index'> = {
     description: 'Check if two strings are anagrams of each other. An anagram uses the same characters in the same quantity. Ignore spaces, punctuation, and case differences.',
     test,
     solution,
-    image: '',
+    image: 'anagram.webp',
     examples: [
         `anagram('listen', 'silent') -> true;`,
         `anagram('hello', 'world') -> false;`,

@@ -13,7 +13,7 @@ const task: Omit<ITask, 'index'> = {
     description: 'Write a function `mario` that takes a number `n` and prints a right-aligned staircase of height `n` using the `#` character.',
     test,
     solution,
-    image: '',
+    image: 'mario.webp',
     examples: [
         `mario(1) -> console.log('#\\n');`,
         `mario(2) -> console.log('# \\n##\\n');`,

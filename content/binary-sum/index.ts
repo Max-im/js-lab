@@ -13,7 +13,7 @@ const task: Omit<ITask, 'index'> = {
     description: 'Write a function that takes two binary strings and returns their sum (also a binary string).',
     test,
     solution,
-    image: '',
+    image: 'binarysum.webp',
     examples: [
         `('0000101', '0000010') -> '0000111';`,
         `('0000001', '0000001') -> '0000010';`,
