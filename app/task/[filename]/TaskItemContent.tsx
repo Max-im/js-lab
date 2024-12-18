@@ -71,7 +71,7 @@ export default function TaskItemContent({ filename }: { filename: string }) {
                 <Labels list={task.tags} />
                 <p className="text-md mt-10 text-justify">{task.description}</p>
               </div>
-              <div className="w-full md:w-[250px] mt-5 flex lg:mt-0 justify-center">
+              <div className="w-full md:w-[250px] shrink-0 mt-5 flex lg:mt-0 justify-center">
                 <Image src={`/${task.image}`} alt={task.title} width={250} height={250} className="rounded-lg" />
               </div>
             </div>
