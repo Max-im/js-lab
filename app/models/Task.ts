@@ -54,15 +54,17 @@ export class Task implements ITask {
         return new Task(task);
     }
 
-    static getFilteredTasks(searchParams: ReadonlyURLSearchParams) {
+    static getFilteredTasks(searchParams: ReadonlyURLSearchParams | null) {
+        let tasks = content.map(task => new Task(task));
+        if (!searchParams) {
+            return tasks;
+        }
         const level = searchParams.get('level');
         const label = searchParams.get('label');
 
         const selectedLevel = level ? level.toLowerCase() : null;
         const selectedLabel = label ? label.toLowerCase() : null;
 
-        let tasks = content.map(task => new Task(task));
-        
         if (selectedLabel) {
             tasks = tasks.filter(task => task.tags.includes(selectedLabel));
         }

@@ -6,7 +6,10 @@ import styles from './LabelsFilter.module.css';
 export default function LabelsFilter() {
     const labels = Task.getLabels();
     const searchParams = useSearchParams();
-    const currentParams = new URLSearchParams(searchParams.toString());
+    let currentParams: URLSearchParams;
+    if (searchParams) {
+        currentParams = new URLSearchParams(searchParams.toString());
+    }
 
     return (
         <>

@@ -15,7 +15,7 @@ const Analytics = () => {
   const pathname = usePathname();
 
   useEffect(() => {
-    if (window.gtag) {
+    if (window.gtag && pathname) {
       window.gtag('config', GA_TRACKING_ID, {
         page_path: pathname,
       });
