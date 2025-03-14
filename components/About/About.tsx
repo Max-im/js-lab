@@ -6,24 +6,31 @@ export default function About() {
   return (
     <SlideUp>
       <section className="p-5 md:px-10 bg-gray-100 mt-5 rounded-lg relative">
-        <BlockTitle title="About Us" />
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <SlideRight>
-            <Image src="/deal.jpg" itemProp="image" alt="Interview" width={500} height={300} className="rounded-lg" />
-          </SlideRight>
-          <div className="justify">
+        <BlockTitle title="About Project" />
+        <div className="flex gap-12">
+          <div className="justify flex-0">
+            <SlideRight>
+              <Image src="/me.jpg" itemProp="image" alt="Interview" width={300} height={300} className="rounded-lg" />
+            </SlideRight>
+          </div>
+          <div className="justify flex-1">
             <p className="mb-3">
-              Our mission is to equip you with the latest skills, along with the confidence to ace technical interviews and land your dream job-all absolutely <b className="accent__text">FREE</b>.
-              At JS-Lab, we are committed to your success by providing expert guidance in the form of practical preparation and essential tools absolutely free of cost.
+              As a seasoned full-stack developer with over 7 years of experience in JavaScript, Node.js, React, and TypeScript, I know firsthand how crucial the right preparation is for landing a great job in tech.
+              My mission is to help you sharpen your skills, build confidence, and navigate technical interviews successfully—all for <b className="accent__text">FREE</b>.
             </p>
             <p className="mb-3">
-              Whether you&apos;re getting started or leveling up, you&apos;ll learn with confidence and get the skills to stand out and achieve your goals.
-              We&apos;ll help you take that giant leap in your career.
+              I’ve worked on large-scale projects, startups, and business automation, mastering everything from backend architecture to frontend optimization.
+              Now, I’m sharing my knowledge so you can gain real-world coding skills, crack interviews, and secure the job you deserve.
+            </p>
+            <p className="mb-3">
+              Whether you're starting your journey or looking to level up, I provide structured problem-solving approaches, expert insights, and hands-on exercises to help you stand out.
+              Let’s work together to take that next big step in your career.
             </p>
             <p>
-              Your dream job awaits, and we&apos;re ready to make it happen.
+              Your dream job is within reach—let’s make it happen.
             </p>
           </div>
+
         </div>
       </section>
     </SlideUp>
