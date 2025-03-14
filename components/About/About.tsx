@@ -19,12 +19,12 @@ export default function About() {
               My mission is to help you sharpen your skills, build confidence, and navigate technical interviews successfully—all for <b className="accent__text">FREE</b>.
             </p>
             <p className="mb-3">
-              I’ve worked on large-scale projects, startups, and business automation, mastering everything from backend architecture to frontend optimization.
-              Now, I’m sharing my knowledge so you can gain real-world coding skills, crack interviews, and secure the job you deserve.
+              I&apos;ve worked on large-scale projects, startups, and business automation, mastering everything from backend architecture to frontend optimization.
+              Now, I&apos;m sharing my knowledge so you can gain real-world coding skills, crack interviews, and secure the job you deserve.
             </p>
             <p className="mb-3">
-              Whether you're starting your journey or looking to level up, I provide structured problem-solving approaches, expert insights, and hands-on exercises to help you stand out.
-              Let’s work together to take that next big step in your career.
+              Whether you&apos;re starting your journey or looking to level up, I provide structured problem-solving approaches, expert insights, and hands-on exercises to help you stand out.
+              Let&apos;s work together to take that next big step in your career.
             </p>
             <p>
               Your dream job is within reach—let’s make it happen.
