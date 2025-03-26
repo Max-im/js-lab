@@ -7,7 +7,7 @@ export default function About() {
     <SlideUp>
       <section className="p-5 md:px-10 bg-gray-100 mt-5 rounded-lg relative">
         <BlockTitle title="About Project" />
-        <div className="flex gap-12">
+        <div className="flex gap-12 flex-col md:flex-row items-center">
           <div className="justify flex-0">
             <SlideRight>
               <Image src="/me.jpg" itemProp="image" alt="Interview" width={300} height={300} className="rounded-lg" />
