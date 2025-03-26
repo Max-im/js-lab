@@ -2,10 +2,10 @@ import Script from 'next/script';
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./styles/globals.css";
-import Container from '@mui/material/Container';
 import Footer from "@/components/Footer";
 import Analytics from './analytics';
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import Header from '@/components/Header';
 
 const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GA_TRACKING_ID!;
 
@@ -87,9 +87,10 @@ export default function RootLayout({
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <div className="flex flex-col min-h-screen w-full min-w-[320px]">
-          <Container maxWidth="xl" className="flex-grow">
+          <Header />
+          <div className="flex-grow container mx-auto lg:px-20">
             {children}
-          </Container>
+          </div>
           <Footer />
         </div>
         <Analytics />
