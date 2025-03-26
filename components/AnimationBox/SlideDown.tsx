@@ -1,3 +1,5 @@
+'use client';
+
 import { ReactNode } from "react";
 import { useInView } from 'react-intersection-observer';
 import styles from './AnimationBox.module.css';

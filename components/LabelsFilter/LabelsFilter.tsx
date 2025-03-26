@@ -1,21 +1,19 @@
 import Link from 'next/link';
-import { useSearchParams } from 'next/navigation';
 import { Task } from '@/app/models/Task';
 import styles from './LabelsFilter.module.css';
 
-export default function LabelsFilter() {
+export default function LabelsFilter({ searchParams }: { searchParams: URLSearchParams }) {
     const labels = Task.getLabels();
-    const searchParams = useSearchParams();
     let currentParams: URLSearchParams;
     if (searchParams) {
-        currentParams = new URLSearchParams(searchParams.toString());
+        currentParams = new URLSearchParams(searchParams);
     }
 
     return (
         <>
             <h3 className="text-2xl font-bold mt-4">Filter by Label</h3>
             <div className="container mx-auto py-6 flex overflow-x-auto">
-            {labels.map((label: string) => {
+                {labels.map((label: string) => {
                     const updatedParams = new URLSearchParams(currentParams.toString());
                     updatedParams.set('label', label);
 

@@ -6,7 +6,6 @@ import HeroAsideDecor from '../Common/HeroAsideDecor';
 import HeroBgDecor from './HeroBgDecor';
 import HeroDevice from './HeroDevice';
 import Header from '../Header';
-// import HeroSlider from './HeroSlider';
 
 const Hero: FC = () => {
   return (

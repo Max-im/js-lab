@@ -1,6 +1,5 @@
 import { IResult, ITask, ITaskLevel } from "@/types";
 import content from '@/content';
-import { ReadonlyURLSearchParams } from "next/navigation";
 
 export class Task implements ITask {
     title: string;
@@ -54,13 +53,13 @@ export class Task implements ITask {
         return new Task(task);
     }
 
-    static getFilteredTasks(searchParams: ReadonlyURLSearchParams | null) {
+    static getFilteredTasks(searchParams: URLSearchParams | null) {
         let tasks = content.map(task => new Task(task));
-        if (!searchParams) {
+        if (!searchParams || Object.keys(searchParams).length === 0) {
             return tasks;
         }
-        const level = searchParams.get('level');
-        const label = searchParams.get('label');
+        const level = 'level' in searchParams && typeof searchParams.level === 'string' ? searchParams.level : null;
+        const label = 'label' in searchParams && typeof searchParams.label === 'string' ? searchParams.label : null;
 
         const selectedLevel = level ? level.toLowerCase() : null;
         const selectedLabel = label ? label.toLowerCase() : null;
