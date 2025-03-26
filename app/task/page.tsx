@@ -1,6 +1,5 @@
 import { Metadata } from 'next';
 import { Task } from '../models/Task';
-import Header from '@/components/Header';
 import { SlideDown, SlideRight } from '@/components/AnimationBox';
 import LevelFilter from '@/components/LevelFilter';
 import HeroBgDecor from '@/components/Hero/HeroBgDecor';
